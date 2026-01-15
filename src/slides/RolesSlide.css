@@ -137,20 +137,35 @@
   line-height: 1.5;
 }
 
-.detail-tip {
+.detail-goal {
   margin-top: 1rem;
-  padding: 0.8rem;
-  background: rgba(212, 175, 55, 0.1);
+  padding: 0.8rem 1rem;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+  border: 1px solid rgba(212, 175, 55, 0.3);
   border-radius: 8px;
-  font-size: 0.9rem;
-  color: var(--primary-gold-light);
   display: flex;
-  align-items: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 0.5rem;
 }
 
-.tip-icon {
-  font-size: 1rem;
+.goal-icon {
+  font-size: 1.1rem;
+}
+
+.goal-label {
+  font-size: 0.75rem;
+  color: var(--primary-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+.goal-text {
+  width: 100%;
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.5;
 }
 
 @media (max-width: 768px) {

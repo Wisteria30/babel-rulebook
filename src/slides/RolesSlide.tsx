@@ -17,7 +17,7 @@ const roles = [
     color: '#6495ed',
     ability: '毎ラウンド、1人を占う',
     result: '「神の使い」か「人間」か分かる',
-    tip: '情報を共有するか、最後まで隠すか。嘘をつくこともできる。',
+    goal: '妨害者を特定して、毎ラウンド追放したい',
   },
   {
     id: 'medium',
@@ -27,7 +27,7 @@ const roles = [
     color: '#9370db',
     ability: '前ラウンドの全AI指示の要約を確認',
     result: '個人特定不可。全体の雰囲気のみ',
-    tip: '「合意通り」「怪しい指示が混ざっている」などを知れる。',
+    goal: '怪しい指示があったかをチームに共有したい',
   },
   {
     id: 'citizen',
@@ -37,7 +37,7 @@ const roles = [
     color: '#3cb371',
     ability: '特殊能力なし',
     result: '—',
-    tip: '推理と会話で貢献。疑われたら証明が難しい。',
+    goal: '推理と会話で妨害者を見破りたい',
   },
   {
     id: 'apostle',
@@ -47,7 +47,7 @@ const roles = [
     color: '#dc143c',
     ability: '人間に化けて妨害指示を出す',
     result: '—',
-    tip: 'バレずに指示を歪めろ。「言葉の反転」を利用せよ。',
+    goal: 'バレずにアプリを壊したい',
   },
 ]
 
@@ -124,9 +124,10 @@ export default function RolesSlide({ direction }: SlideProps) {
                   <span className="detail-value">{selected.result}</span>
                 </div>
               )}
-              <div className="detail-tip">
-                <span className="tip-icon">💡</span>
-                {selected.tip}
+              <div className="detail-goal">
+                <span className="goal-icon">🎯</span>
+                <span className="goal-label">やりたいこと</span>
+                <span className="goal-text">{selected.goal}</span>
               </div>
             </div>
           </motion.div>

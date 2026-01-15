@@ -4,13 +4,11 @@
   padding: 1rem 0;
 }
 
-.overview-story,
-.overview-modern {
+.overview-concept {
   margin: 1.5rem 0;
 }
 
-.story-text,
-.modern-text {
+.concept-text {
   font-size: clamp(1rem, 2.5vw, 1.3rem);
   line-height: 2;
 }
@@ -86,7 +84,7 @@
   text-shadow: 0 0 10px rgba(220, 20, 60, 0.5);
 }
 
-.team-card p {
+.team-goal {
   font-size: 0.9rem;
   color: var(--text-muted);
   margin-bottom: 1rem;
@@ -141,21 +139,18 @@
     padding: 1rem 1.5rem;
   }
   
-  .story-text,
-  .modern-text {
+  .concept-text {
     font-size: 0.95rem;
     line-height: 1.8;
   }
   
-  .overview-story,
-  .overview-modern {
+  .overview-concept {
     margin: 1rem 0;
   }
 }
 
 @media (max-height: 700px) {
-  .overview-story,
-  .overview-modern {
+  .overview-concept {
     margin: 0.8rem 0;
   }
   

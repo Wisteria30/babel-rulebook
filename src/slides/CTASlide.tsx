@@ -35,9 +35,8 @@ export default function CTASlide({ direction }: SlideProps) {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
         >
-          信頼と疑念。協力と裏切り。
-          <br />
-          AIと人間が織りなす、新しい推理体験。
+          信頼と疑念。協力と裏切り。<br />
+          みんなでAIに指示を出して、アプリを完成させろ。
         </motion.p>
 
         <motion.div
@@ -62,12 +61,12 @@ export default function CTASlide({ direction }: SlideProps) {
             <span>30〜40分</span>
           </div>
           <div className="summary-item">
-            <span className="summary-icon">🎯</span>
-            <span>推理 × 協力</span>
+            <span className="summary-icon">🔍</span>
+            <span>人狼系推理</span>
           </div>
           <div className="summary-item">
-            <span className="summary-icon">🤖</span>
-            <span>AI連携</span>
+            <span className="summary-icon">⌨️</span>
+            <span>Vibe Coding</span>
           </div>
         </motion.div>
 
@@ -78,7 +77,7 @@ export default function CTASlide({ direction }: SlideProps) {
           transition={{ delay: 1.1 }}
         >
           <div className="feature-badge">
-            <span>🎲</span> 人狼系ゲームの新潮流
+            <span>🎲</span> グループゲーム
           </div>
           <div className="feature-badge">
             <span>💻</span> リアルタイムAI実行

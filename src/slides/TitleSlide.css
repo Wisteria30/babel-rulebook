@@ -9,14 +9,28 @@
 }
 
 .tower-icon-wrapper {
+  margin-bottom: 0.5rem;
+}
+
+.genre-badge {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(212, 175, 55, 0.1));
+  border: 1px solid var(--primary-gold);
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--primary-gold);
+  letter-spacing: 0.05em;
   margin-bottom: 1rem;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
 }
 
 .tagline {
-  font-size: clamp(0.85rem, 2vw, 1.1rem);
-  color: var(--text-muted);
-  margin-top: 0.8rem;
-  letter-spacing: 0.15em;
+  font-size: clamp(0.9rem, 2.5vw, 1.15rem);
+  color: var(--text-light);
+  margin-top: 0;
+  line-height: 1.8;
 }
 
 .game-info {
@@ -31,7 +45,7 @@
 }
 
 .start-btn {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .start-btn .arrow {
@@ -43,7 +57,7 @@
 }
 
 .scroll-hint {
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   font-size: 0.75rem;
   color: var(--text-muted);
   letter-spacing: 0.1em;
@@ -52,7 +66,13 @@
 @media (max-height: 700px) {
   .tower-icon-wrapper {
     transform: scale(0.7);
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.2rem;
+  }
+  
+  .genre-badge {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+    margin-bottom: 0.8rem;
   }
   
   .game-info {
@@ -77,5 +97,10 @@
   
   .subtitle {
     font-size: 0.9rem;
+  }
+  
+  .genre-badge {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.8rem;
   }
 }

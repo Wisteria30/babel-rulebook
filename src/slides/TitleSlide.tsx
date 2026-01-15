@@ -45,26 +45,36 @@ export default function TitleSlide({ direction, onNext }: SlideProps) {
           transition={{ delay: 1.3, duration: 0.5 }}
         />
         
+        <motion.div
+          className="genre-badge"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1.5, duration: 0.5 }}
+        >
+          👥 グループ Vibe Coding ゲーム
+        </motion.div>
+        
         <motion.p
           className="tagline"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.5, duration: 0.6 }}
+          transition={{ delay: 1.7, duration: 0.6 }}
         >
-          AIと人間の協力・裏切り・推理ゲーム
+          みんなでAIに指示を出してアプリを作る。<br />
+          でも、誰かが壊そうとしている——
         </motion.p>
         
         <motion.div
           className="game-info"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.8, duration: 0.6 }}
+          transition={{ delay: 2, duration: 0.6 }}
         >
           <span>4人専用</span>
           <span>·</span>
           <span>30〜40分</span>
           <span>·</span>
-          <span>4ラウンド</span>
+          <span>人狼系推理</span>
         </motion.div>
         
         <motion.button
@@ -72,7 +82,7 @@ export default function TitleSlide({ direction, onNext }: SlideProps) {
           onClick={onNext}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 2.2, duration: 0.5 }}
+          transition={{ delay: 2.4, duration: 0.5 }}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
