@@ -1,6 +1,7 @@
 .roles-content {
   max-width: 900px;
   width: 100%;
+  padding: 1rem 0;
 }
 
 .roles-subtitle {
@@ -174,5 +175,33 @@
   .roles-grid {
     grid-template-columns: 1fr 1fr;
     gap: 0.8rem;
+  }
+}
+
+@media (max-height: 700px) {
+  .roles-grid {
+    margin-bottom: 1rem;
+  }
+  
+  .role-card {
+    padding: 0.8rem 0.6rem;
+  }
+  
+  .role-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .role-name {
+    font-size: 0.9rem;
+  }
+  
+  .role-detail {
+    padding: 1rem;
+  }
+  
+  .detail-header {
+    padding-bottom: 0.8rem;
+    margin-bottom: 0.8rem;
   }
 }

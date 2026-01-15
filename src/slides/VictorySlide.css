@@ -1,6 +1,7 @@
 .victory-content {
   max-width: 800px;
   width: 100%;
+  padding: 1rem 0;
 }
 
 .victory-subtitle {
@@ -227,5 +228,38 @@
   .flow-branch {
     flex-direction: column;
     gap: 0.5rem;
+  }
+}
+
+@media (max-height: 700px) {
+  .checklist-section {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .checklist-section h3 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .checklist-item {
+    padding: 0.4rem;
+    font-size: 0.8rem;
+  }
+  
+  .judgment-flow {
+    margin-bottom: 1rem;
+  }
+  
+  .flow-step {
+    padding: 0.4rem 1rem;
+  }
+  
+  .result-card {
+    border-radius: 8px;
+  }
+  
+  .result-header {
+    padding: 0.8rem;
   }
 }

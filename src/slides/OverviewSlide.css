@@ -1,6 +1,7 @@
 .overview-content {
   max-width: 900px;
   width: 100%;
+  padding: 1rem 0;
 }
 
 .overview-story,
@@ -137,5 +138,37 @@
   .team-card {
     min-width: 100%;
     max-width: 280px;
+    padding: 1rem 1.5rem;
+  }
+  
+  .story-text,
+  .modern-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+  }
+  
+  .overview-story,
+  .overview-modern {
+    margin: 1rem 0;
+  }
+}
+
+@media (max-height: 700px) {
+  .overview-story,
+  .overview-modern {
+    margin: 0.8rem 0;
+  }
+  
+  .team-card {
+    padding: 1rem;
+  }
+  
+  .team-icon {
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+  }
+  
+  .team-card h3 {
+    font-size: 1.1rem;
   }
 }

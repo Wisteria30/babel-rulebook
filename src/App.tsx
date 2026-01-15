@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { AnimatePresence } from 'framer-motion'
+import { useSwipeable } from 'react-swipeable'
 import TitleSlide from './slides/TitleSlide'
 import OverviewSlide from './slides/OverviewSlide'
 import RolesSlide from './slides/RolesSlide'
@@ -23,6 +24,16 @@ const slides = [
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [direction, setDirection] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768 || 'ontouchstart' in window)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   const goToSlide = (index: number) => {
     setDirection(index > currentSlide ? 1 : -1)
@@ -43,6 +54,7 @@ function App() {
     }
   }
 
+  // Keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'ArrowRight' || e.key === ' ') {
@@ -55,10 +67,21 @@ function App() {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [currentSlide])
 
+  // Swipe handlers
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => nextSlide(),
+    onSwipedRight: () => prevSlide(),
+    trackMouse: false,
+    trackTouch: true,
+    delta: 50,
+    swipeDuration: 500,
+    preventScrollOnSwipe: false,
+  })
+
   const CurrentSlideComponent = slides[currentSlide]
 
   return (
-    <div className="app">
+    <div className="app" {...swipeHandlers}>
       <div className="background-effects">
         <div className="tower-silhouette" />
         <div className="particles" />
@@ -79,6 +102,7 @@ function App() {
         onNavigate={goToSlide}
         onPrev={prevSlide}
         onNext={nextSlide}
+        isMobile={isMobile}
       />
     </div>
   )

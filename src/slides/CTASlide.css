@@ -1,6 +1,7 @@
 .cta-content {
   max-width: 700px;
   width: 100%;
+  padding: 1rem 0;
 }
 
 /* Tower Visual */
@@ -98,5 +99,24 @@
   .cta-main-btn {
     padding: 1rem 2rem;
     font-size: 1rem;
+  }
+}
+
+@media (max-height: 700px) {
+  .cta-tower-visual {
+    margin-bottom: 1rem;
+    transform: scale(0.8);
+  }
+  
+  .cta-summary {
+    margin-bottom: 1rem;
+  }
+  
+  .cta-features {
+    margin-bottom: 1.5rem;
+  }
+  
+  .cta-actions {
+    margin-bottom: 1rem;
   }
 }

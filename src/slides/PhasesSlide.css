@@ -1,6 +1,7 @@
 .phases-content {
   max-width: 900px;
   width: 100%;
+  padding: 1rem 0;
 }
 
 .phases-subtitle {
@@ -169,5 +170,33 @@
   
   .detail-action {
     font-size: 0.8rem;
+  }
+}
+
+@media (max-height: 700px) {
+  .phase-tabs {
+    margin-bottom: 1rem;
+    gap: 0.3rem;
+  }
+  
+  .phase-tab {
+    padding: 0.5rem 0.6rem;
+    min-width: 55px;
+  }
+  
+  .tab-icon {
+    font-size: 1.2rem;
+  }
+  
+  .panel-header {
+    padding: 0.8rem 1rem;
+  }
+  
+  .panel-icon {
+    font-size: 2rem;
+  }
+  
+  .panel-body {
+    padding: 0.8rem 1rem;
   }
 }

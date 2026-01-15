@@ -4,7 +4,8 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-bottom: 4rem;
+  min-height: 100%;
+  padding: 1rem 0;
 }
 
 .tower-icon-wrapper {
@@ -25,6 +26,8 @@
   font-size: 0.85rem;
   color: var(--primary-gold);
   opacity: 0.8;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .start-btn {
@@ -40,8 +43,7 @@
 }
 
 .scroll-hint {
-  position: absolute;
-  bottom: 5rem;
+  margin-top: 2rem;
   font-size: 0.75rem;
   color: var(--text-muted);
   letter-spacing: 0.1em;
@@ -49,8 +51,8 @@
 
 @media (max-height: 700px) {
   .tower-icon-wrapper {
-    transform: scale(0.8);
-    margin-bottom: 0.5rem;
+    transform: scale(0.7);
+    margin-bottom: 0.3rem;
   }
   
   .game-info {
@@ -58,6 +60,22 @@
   }
   
   .start-btn {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+  
+  .scroll-hint {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-height: 550px) {
+  .tower-icon-wrapper {
+    transform: scale(0.5);
+    margin-bottom: 0;
+  }
+  
+  .subtitle {
+    font-size: 0.9rem;
   }
 }

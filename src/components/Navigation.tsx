@@ -4,6 +4,7 @@ interface NavigationProps {
   onNavigate: (index: number) => void
   onPrev: () => void
   onNext: () => void
+  isMobile: boolean
 }
 
 export default function Navigation({ 
@@ -11,18 +12,21 @@ export default function Navigation({
   totalSlides, 
   onNavigate,
   onPrev,
-  onNext 
+  onNext,
+  isMobile
 }: NavigationProps) {
   return (
-    <nav className="navigation">
-      <button 
-        className="nav-arrow" 
-        onClick={onPrev}
-        disabled={currentSlide === 0}
-        aria-label="Previous slide"
-      >
-        ←
-      </button>
+    <nav className={`navigation ${isMobile ? 'mobile' : ''}`}>
+      {!isMobile && (
+        <button 
+          className="nav-arrow" 
+          onClick={onPrev}
+          disabled={currentSlide === 0}
+          aria-label="Previous slide"
+        >
+          ←
+        </button>
+      )}
       
       <div className="nav-dots">
         {Array.from({ length: totalSlides }).map((_, index) => (
@@ -35,14 +39,22 @@ export default function Navigation({
         ))}
       </div>
       
-      <button 
-        className="nav-arrow" 
-        onClick={onNext}
-        disabled={currentSlide === totalSlides - 1}
-        aria-label="Next slide"
-      >
-        →
-      </button>
+      {!isMobile && (
+        <button 
+          className="nav-arrow" 
+          onClick={onNext}
+          disabled={currentSlide === totalSlides - 1}
+          aria-label="Next slide"
+        >
+          →
+        </button>
+      )}
+      
+      {isMobile && (
+        <div className="swipe-hint">
+          ← スワイプ →
+        </div>
+      )}
     </nav>
   )
 }
