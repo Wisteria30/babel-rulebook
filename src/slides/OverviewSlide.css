@@ -66,6 +66,8 @@
   color: var(--primary-gold);
   opacity: 0.6;
   margin: 0.5rem 0;
+  text-align: center;
+  width: 100%;
 }
 
 /* Traitor Box */
