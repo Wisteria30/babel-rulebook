@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import SlideWrapper from '../components/SlideWrapper'
+import TowerIcon from '../components/TowerIcon'
 import './CTASlide.css'
 
 interface SlideProps {
@@ -17,13 +18,7 @@ export default function CTASlide({ direction }: SlideProps) {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="tower-layers">
-            <div className="tower-layer layer-4">4</div>
-            <div className="tower-layer layer-3">3</div>
-            <div className="tower-layer layer-2">2</div>
-            <div className="tower-layer layer-1">1</div>
-          </div>
-          <div className="tower-base">🏗️</div>
+          <TowerIcon size="large" animate={true} />
         </motion.div>
 
         <motion.h2

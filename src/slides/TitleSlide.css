@@ -7,10 +7,8 @@
   padding-bottom: 4rem;
 }
 
-.tower-icon {
-  font-size: 4rem;
-  margin-bottom: 0.5rem;
-  filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5));
+.tower-icon-wrapper {
+  margin-bottom: 1rem;
 }
 
 .tagline {
@@ -50,9 +48,9 @@
 }
 
 @media (max-height: 700px) {
-  .tower-icon {
-    font-size: 3rem;
-    margin-bottom: 0.3rem;
+  .tower-icon-wrapper {
+    transform: scale(0.8);
+    margin-bottom: 0.5rem;
   }
   
   .game-info {

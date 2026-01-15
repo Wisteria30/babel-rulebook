@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import SlideWrapper from '../components/SlideWrapper'
+import TowerIcon from '../components/TowerIcon'
 import './TitleSlide.css'
 
 interface SlideProps {
@@ -12,12 +13,12 @@ export default function TitleSlide({ direction, onNext }: SlideProps) {
     <SlideWrapper direction={direction}>
       <div className="title-content">
         <motion.div
-          className="tower-icon"
-          initial={{ scale: 0, rotate: -180 }}
-          animate={{ scale: 1, rotate: 0 }}
-          transition={{ duration: 1, type: 'spring' }}
+          className="tower-icon-wrapper"
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.8, type: 'spring' }}
         >
-          🗼
+          <TowerIcon size="large" animate={true} />
         </motion.div>
         
         <motion.h1
