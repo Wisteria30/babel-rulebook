@@ -1,0 +1,173 @@
+.phases-content {
+  max-width: 900px;
+  width: 100%;
+}
+
+.phases-subtitle {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.phase-tabs {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.phase-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.8rem 1rem;
+  background: rgba(26, 26, 46, 0.6);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 80px;
+}
+
+.phase-tab:hover {
+  background: rgba(26, 26, 46, 0.9);
+  border-color: rgba(212, 175, 55, 0.5);
+}
+
+.phase-tab.active {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: var(--primary-gold);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.tab-icon {
+  font-size: 1.5rem;
+}
+
+.tab-name {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.phase-tab.active .tab-name {
+  color: var(--primary-gold);
+}
+
+/* Phase Detail Panel */
+.phase-detail-panel {
+  background: rgba(26, 26, 46, 0.9);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 1.5rem;
+  background: rgba(212, 175, 55, 0.1);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.panel-icon {
+  font-size: 2.5rem;
+}
+
+.panel-header h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.2rem;
+  text-align: left;
+}
+
+.panel-header p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-align: left;
+  margin: 0;
+}
+
+.panel-body {
+  padding: 1.2rem 1.5rem;
+}
+
+.detail-item {
+  display: flex;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  align-items: flex-start;
+}
+
+.detail-item:last-of-type {
+  border-bottom: none;
+}
+
+.detail-label {
+  min-width: 80px;
+  font-size: 0.85rem;
+  color: var(--primary-gold);
+  font-weight: 500;
+}
+
+.detail-action {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  text-align: left;
+  line-height: 1.5;
+}
+
+.warning-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  background: rgba(220, 20, 60, 0.15);
+  border: 1px solid rgba(220, 20, 60, 0.3);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #ff6b6b;
+}
+
+.warning-icon {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .phase-tabs {
+    gap: 0.3rem;
+  }
+  
+  .phase-tab {
+    padding: 0.6rem 0.8rem;
+    min-width: 60px;
+  }
+  
+  .tab-icon {
+    font-size: 1.2rem;
+  }
+  
+  .tab-name {
+    font-size: 0.6rem;
+  }
+  
+  .panel-icon {
+    font-size: 2rem;
+  }
+  
+  .panel-header h3 {
+    font-size: 1.1rem;
+  }
+  
+  .detail-label {
+    min-width: 60px;
+    font-size: 0.75rem;
+  }
+  
+  .detail-action {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,157 @@
+.cta-content {
+  max-width: 700px;
+  width: 100%;
+}
+
+/* Tower Visual */
+.cta-tower-visual {
+  margin-bottom: 1.5rem;
+}
+
+.tower-layers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.tower-layer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    to bottom,
+    rgba(212, 175, 55, 0.3),
+    rgba(212, 175, 55, 0.1)
+  );
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  color: var(--primary-gold);
+  animation: layerPulse 3s ease-in-out infinite;
+}
+
+.layer-1 {
+  width: 100px;
+  height: 30px;
+  animation-delay: 0s;
+}
+
+.layer-2 {
+  width: 85px;
+  height: 28px;
+  animation-delay: 0.2s;
+}
+
+.layer-3 {
+  width: 70px;
+  height: 26px;
+  animation-delay: 0.4s;
+}
+
+.layer-4 {
+  width: 55px;
+  height: 24px;
+  animation-delay: 0.6s;
+}
+
+@keyframes layerPulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+.tower-base {
+  font-size: 2.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Tagline */
+.cta-tagline {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+/* Summary */
+.cta-summary {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.summary-icon {
+  font-size: 1.5rem;
+}
+
+.summary-item span:last-child {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Features */
+.cta-features {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.feature-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  background: rgba(26, 26, 46, 0.8);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+.feature-badge span {
+  font-size: 1rem;
+}
+
+/* Actions */
+.cta-actions {
+  margin-bottom: 2rem;
+}
+
+.cta-main-btn {
+  padding: 1.2rem 3rem;
+  font-size: 1.2rem;
+}
+
+/* Footer */
+.cta-footer {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+
+@media (max-width: 640px) {
+  .cta-summary {
+    gap: 1rem;
+  }
+  
+  .feature-badge {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  .cta-main-btn {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
