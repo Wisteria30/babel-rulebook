@@ -51,7 +51,7 @@ export default function TitleSlide({ direction, onNext }: SlideProps) {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.5, duration: 0.5 }}
         >
-          👥 グループ Vibe Coding ゲーム
+          👥 協力型 Vibe Coding × 人狼系推理
         </motion.div>
         
         <motion.p
@@ -60,7 +60,7 @@ export default function TitleSlide({ direction, onNext }: SlideProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.7, duration: 0.6 }}
         >
-          みんなでAIに指示を出してアプリを作る。<br />
+          みんなで協力してAIに指示を出し、アプリを作る。<br />
           でも、誰かが壊そうとしている——
         </motion.p>
         
@@ -73,8 +73,6 @@ export default function TitleSlide({ direction, onNext }: SlideProps) {
           <span>4人専用</span>
           <span>·</span>
           <span>30〜40分</span>
-          <span>·</span>
-          <span>人狼系推理</span>
         </motion.div>
         
         <motion.button

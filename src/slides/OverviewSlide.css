@@ -1,16 +1,20 @@
 .overview-content {
-  max-width: 900px;
+  max-width: 800px;
   width: 100%;
   padding: 1rem 0;
 }
 
 .overview-concept {
-  margin: 1.5rem 0;
+  margin: 1rem 0;
 }
 
 .concept-text {
-  font-size: clamp(1rem, 2.5vw, 1.3rem);
-  line-height: 2;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  line-height: 1.8;
+}
+
+.mobile-br {
+  display: none;
 }
 
 .highlight {
@@ -23,147 +27,128 @@
   font-weight: 500;
 }
 
-.teams-container {
+/* God System Box */
+.god-system-box {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  margin: 2rem 0;
-  flex-wrap: wrap;
-}
-
-.team-card {
-  background: rgba(26, 26, 46, 0.8);
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.2rem 1.5rem;
+  background: linear-gradient(135deg, rgba(220, 20, 60, 0.15), rgba(220, 20, 60, 0.05));
+  border: 1px solid rgba(220, 20, 60, 0.4);
   border-radius: 12px;
-  padding: 1.5rem 2rem;
-  min-width: 220px;
-  transition: all 0.3s ease;
+  margin: 1rem 0;
 }
 
-.team-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+.god-icon {
+  font-size: 2rem;
+  line-height: 1;
 }
 
-.human-team {
-  border-color: rgba(100, 149, 237, 0.5);
-}
-
-.human-team:hover {
-  border-color: #6495ed;
-  box-shadow: 0 0 20px rgba(100, 149, 237, 0.3);
-}
-
-.god-team {
-  border-color: rgba(220, 20, 60, 0.5);
-}
-
-.god-team:hover {
-  border-color: #dc143c;
-  box-shadow: 0 0 20px rgba(220, 20, 60, 0.3);
-}
-
-.team-icon {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.team-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-}
-
-.human-team h3 {
-  color: #6495ed;
-  text-shadow: 0 0 10px rgba(100, 149, 237, 0.5);
-}
-
-.god-team h3 {
-  color: #dc143c;
+.god-text h4 {
+  font-size: 1rem;
+  color: #ff6b6b;
+  margin-bottom: 0.4rem;
   text-shadow: 0 0 10px rgba(220, 20, 60, 0.5);
 }
 
-.team-goal {
+.god-text p {
   font-size: 0.9rem;
-  color: var(--text-muted);
-  margin-bottom: 1rem;
-}
-
-.team-card ul {
-  list-style: none;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin: 0;
   text-align: left;
 }
 
-.team-card li {
-  padding: 0.3rem 0;
-  padding-left: 1.2rem;
-  position: relative;
-  font-size: 0.95rem;
-}
-
-.team-card li::before {
-  content: '▸';
-  position: absolute;
-  left: 0;
-  color: var(--primary-gold);
-}
-
-.vs-badge {
+/* Plus Badge */
+.plus-badge {
   font-family: 'Cinzel', serif;
   font-size: 1.5rem;
-  font-weight: 700;
   color: var(--primary-gold);
-  text-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+  opacity: 0.6;
+  margin: 0.5rem 0;
+}
+
+/* Traitor Box */
+.traitor-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.2rem 1.5rem;
+  background: linear-gradient(135deg, rgba(147, 112, 219, 0.15), rgba(147, 112, 219, 0.05));
+  border: 1px solid rgba(147, 112, 219, 0.4);
+  border-radius: 12px;
+  margin: 0.5rem 0 1rem;
+}
+
+.traitor-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.traitor-text h4 {
+  font-size: 1rem;
+  color: #b19cd9;
+  margin-bottom: 0.4rem;
+  text-shadow: 0 0 10px rgba(147, 112, 219, 0.5);
+}
+
+.traitor-text p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin: 0;
+  text-align: left;
 }
 
 .overview-goal {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: var(--primary-gold);
-  margin-top: 1rem;
+  line-height: 1.6;
 }
 
 @media (max-width: 640px) {
-  .teams-container {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .vs-badge {
-    font-size: 1.2rem;
-  }
-  
-  .team-card {
-    min-width: 100%;
-    max-width: 280px;
-    padding: 1rem 1.5rem;
+  .mobile-br {
+    display: block;
   }
   
   .concept-text {
     font-size: 0.95rem;
-    line-height: 1.8;
   }
   
-  .overview-concept {
-    margin: 1rem 0;
+  .god-system-box,
+  .traitor-box {
+    padding: 1rem;
+  }
+  
+  .god-icon,
+  .traitor-icon {
+    font-size: 1.5rem;
+  }
+  
+  .god-text h4,
+  .traitor-text h4 {
+    font-size: 0.9rem;
+  }
+  
+  .god-text p,
+  .traitor-text p {
+    font-size: 0.8rem;
   }
 }
 
 @media (max-height: 700px) {
-  .overview-concept {
-    margin: 0.8rem 0;
+  .god-system-box,
+  .traitor-box {
+    padding: 0.8rem 1rem;
+    margin: 0.5rem 0;
   }
   
-  .team-card {
-    padding: 1rem;
+  .plus-badge {
+    margin: 0.3rem 0;
+    font-size: 1.2rem;
   }
   
-  .team-icon {
-    font-size: 2rem;
-    margin-bottom: 0.3rem;
-  }
-  
-  .team-card h3 {
-    font-size: 1.1rem;
+  .overview-goal {
+    font-size: 1rem;
   }
 }

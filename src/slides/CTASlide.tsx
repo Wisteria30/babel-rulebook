@@ -26,7 +26,7 @@ export default function CTASlide({ direction }: SlideProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-          塔を築け。
+          協力して、塔を築け。
         </motion.h2>
 
         <motion.p
@@ -36,7 +36,7 @@ export default function CTASlide({ direction }: SlideProps) {
           transition={{ delay: 0.5 }}
         >
           信頼と疑念。協力と裏切り。<br />
-          みんなでAIに指示を出して、アプリを完成させろ。
+          神の妨害に抗いながら、みんなでアプリを完成させろ。
         </motion.p>
 
         <motion.div
@@ -54,7 +54,7 @@ export default function CTASlide({ direction }: SlideProps) {
         >
           <div className="summary-item">
             <span className="summary-icon">👥</span>
-            <span>4人専用</span>
+            <span>4人協力</span>
           </div>
           <div className="summary-item">
             <span className="summary-icon">⏱️</span>
@@ -77,13 +77,13 @@ export default function CTASlide({ direction }: SlideProps) {
           transition={{ delay: 1.1 }}
         >
           <div className="feature-badge">
-            <span>🎲</span> グループゲーム
+            <span>🤝</span> 協力ベース
           </div>
           <div className="feature-badge">
-            <span>💻</span> リアルタイムAI実行
+            <span>💻</span> リアルタイムAI
           </div>
           <div className="feature-badge">
-            <span>✨</span> 指示が実際に動く
+            <span>🎭</span> 心理戦
           </div>
         </motion.div>
 

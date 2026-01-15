@@ -12,7 +12,7 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.15,
     },
   },
 }
@@ -35,40 +35,35 @@ export default function OverviewSlide({ direction }: SlideProps) {
 
         <motion.div className="overview-concept" variants={itemVariants}>
           <p className="concept-text">
-            4人でAIに指示を出し、<span className="highlight">アプリ（塔）</span>を完成させる。<br />
-            だが、その中に<span className="danger">妨害者</span>が紛れ込んでいる——
+            4人で<span className="highlight">協力</span>してAIに指示を出し、<br className="mobile-br" />
+            <span className="highlight">アプリ（塔）</span>を完成させる。
           </p>
+        </motion.div>
+
+        <motion.div className="god-system-box" variants={itemVariants}>
+          <div className="god-icon">⚡</div>
+          <div className="god-text">
+            <h4>神（システム）の妨害</h4>
+            <p>神は塔の完成を許さない。<br />ランダムに「沈黙」や「言葉の反転」で妨害してくる。</p>
+          </div>
+        </motion.div>
+
+        <motion.div className="plus-badge" variants={itemVariants}>
+          ＋
+        </motion.div>
+
+        <motion.div className="traitor-box" variants={itemVariants}>
+          <div className="traitor-icon">👿</div>
+          <div className="traitor-text">
+            <h4>内通者の存在</h4>
+            <p>プレイヤーの中に<span className="danger">神の使い</span>が潜んでいる。<br />協力の中に裏切りが混ざる——誰を信じる？</p>
+          </div>
         </motion.div>
 
         <motion.div className="divider" variants={itemVariants} />
 
-        <motion.div className="teams-container" variants={itemVariants}>
-          <div className="team-card human-team">
-            <div className="team-icon">👥</div>
-            <h3>人間陣営</h3>
-            <p className="team-goal">協力して塔を完成させる</p>
-            <ul>
-              <li>占い師</li>
-              <li>霊媒師</li>
-              <li>市民</li>
-            </ul>
-          </div>
-
-          <div className="vs-badge">VS</div>
-
-          <div className="team-card god-team">
-            <div className="team-icon">⚡</div>
-            <h3>神陣営</h3>
-            <p className="team-goal">塔の完成を阻止する</p>
-            <ul>
-              <li>神の使い</li>
-              <li>神（システム）</li>
-            </ul>
-          </div>
-        </motion.div>
-
         <motion.p className="overview-goal" variants={itemVariants}>
-          <strong>4ラウンド後、塔は完成するか？</strong>
+          <strong>協力 × 推理 × 心理戦。<br />4ラウンド後、塔は完成するか？</strong>
         </motion.p>
       </motion.div>
     </SlideWrapper>
