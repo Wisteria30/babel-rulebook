@@ -1,3 +1,5 @@
+import { memo, useMemo } from 'react'
+
 interface NavigationProps {
   currentSlide: number
   totalSlides: number
@@ -7,7 +9,7 @@ interface NavigationProps {
   isMobile: boolean
 }
 
-export default function Navigation({ 
+const Navigation = memo(function Navigation({ 
   currentSlide, 
   totalSlides, 
   onNavigate,
@@ -15,6 +17,11 @@ export default function Navigation({
   onNext,
   isMobile
 }: NavigationProps) {
+  const dots = useMemo(() => 
+    Array.from({ length: totalSlides }, (_, i) => i),
+    [totalSlides]
+  )
+
   return (
     <nav className={`navigation ${isMobile ? 'mobile' : ''}`}>
       {!isMobile && (
@@ -29,7 +36,7 @@ export default function Navigation({
       )}
       
       <div className="nav-dots">
-        {Array.from({ length: totalSlides }).map((_, index) => (
+        {dots.map((index) => (
           <button
             key={index}
             className={`nav-dot ${index === currentSlide ? 'active' : ''}`}
@@ -57,4 +64,6 @@ export default function Navigation({
       )}
     </nav>
   )
-}
+})
+
+export default Navigation

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ReactNode } from 'react'
+import { ReactNode, useMemo } from 'react'
 
 interface SlideWrapperProps {
   children: ReactNode
@@ -22,19 +22,23 @@ const slideVariants = {
   }),
 }
 
+const transition = {
+  x: { type: 'spring', stiffness: 300, damping: 30 },
+  opacity: { duration: 0.3 },
+}
+
 export default function SlideWrapper({ children, direction, className = '' }: SlideWrapperProps) {
+  const classNames = useMemo(() => `slide ${className}`.trim(), [className])
+
   return (
     <motion.div
-      className={`slide ${className}`}
+      className={classNames}
       custom={direction}
       variants={slideVariants}
       initial="enter"
       animate="center"
       exit="exit"
-      transition={{
-        x: { type: 'spring', stiffness: 300, damping: 30 },
-        opacity: { duration: 0.3 },
-      }}
+      transition={transition}
     >
       {children}
     </motion.div>

@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
+import { useState, useMemo, useCallback } from 'react'
 import SlideWrapper from '../components/SlideWrapper'
 import './PhasesSlide.css'
 
@@ -74,12 +74,19 @@ const phases = [
       { role: '☐', action: '明らかな破綻がない' },
     ],
   },
-]
+] as const
 
 export default function PhasesSlide({ direction }: SlideProps) {
   const [activePhase, setActivePhase] = useState('action')
 
-  const current = phases.find(p => p.id === activePhase)!
+  const current = useMemo(() => 
+    phases.find(p => p.id === activePhase)!,
+    [activePhase]
+  )
+
+  const handlePhaseClick = useCallback((phaseId: string) => {
+    setActivePhase(phaseId)
+  }, [])
 
   return (
     <SlideWrapper direction={direction}>
@@ -110,7 +117,7 @@ export default function PhasesSlide({ direction }: SlideProps) {
             <button
               key={phase.id}
               className={`phase-tab ${activePhase === phase.id ? 'active' : ''}`}
-              onClick={() => setActivePhase(phase.id)}
+              onClick={() => handlePhaseClick(phase.id)}
             >
               <span className="tab-icon">{phase.icon}</span>
               <span className="tab-name">{phase.name}</span>

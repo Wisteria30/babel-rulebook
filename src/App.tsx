@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback, useMemo } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import { useSwipeable } from 'react-swipeable'
 import TitleSlide from './slides/TitleSlide'
@@ -19,7 +19,7 @@ const slides = [
   PhasesSlide,
   VictorySlide,
   CTASlide,
-]
+] as const
 
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -35,24 +35,24 @@ function App() {
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
-  const goToSlide = (index: number) => {
-    setDirection(index > currentSlide ? 1 : -1)
+  const goToSlide = useCallback((index: number) => {
+    setDirection(prev => index > currentSlide ? 1 : -1)
     setCurrentSlide(index)
-  }
+  }, [currentSlide])
 
-  const nextSlide = () => {
+  const nextSlide = useCallback(() => {
     if (currentSlide < slides.length - 1) {
       setDirection(1)
-      setCurrentSlide(currentSlide + 1)
+      setCurrentSlide(prev => prev + 1)
     }
-  }
+  }, [currentSlide])
 
-  const prevSlide = () => {
+  const prevSlide = useCallback(() => {
     if (currentSlide > 0) {
       setDirection(-1)
-      setCurrentSlide(currentSlide - 1)
+      setCurrentSlide(prev => prev - 1)
     }
-  }
+  }, [currentSlide])
 
   // Keyboard navigation
   useEffect(() => {
@@ -65,10 +65,10 @@ function App() {
     }
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [currentSlide])
+  }, [nextSlide, prevSlide])
 
-  // Swipe handlers
-  const swipeHandlers = useSwipeable({
+  // Swipe handlers - memoized config
+  const swipeConfig = useMemo(() => ({
     onSwipedLeft: () => nextSlide(),
     onSwipedRight: () => prevSlide(),
     trackMouse: false,
@@ -76,9 +76,12 @@ function App() {
     delta: 50,
     swipeDuration: 500,
     preventScrollOnSwipe: false,
-  })
+  }), [nextSlide, prevSlide])
+
+  const swipeHandlers = useSwipeable(swipeConfig)
 
   const CurrentSlideComponent = slides[currentSlide]
+  const totalSlides = slides.length
 
   return (
     <div className="app" {...swipeHandlers}>
@@ -98,7 +101,7 @@ function App() {
       
       <Navigation 
         currentSlide={currentSlide}
-        totalSlides={slides.length}
+        totalSlides={totalSlides}
         onNavigate={goToSlide}
         onPrev={prevSlide}
         onNext={nextSlide}

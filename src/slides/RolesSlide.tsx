@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useState, useMemo, useCallback } from 'react'
 import SlideWrapper from '../components/SlideWrapper'
 import './RolesSlide.css'
 
@@ -49,12 +49,19 @@ const roles = [
     result: '—',
     goal: 'バレずにアプリを壊したい',
   },
-]
+] as const
 
 export default function RolesSlide({ direction }: SlideProps) {
   const [selectedRole, setSelectedRole] = useState<string | null>(null)
 
-  const selected = roles.find(r => r.id === selectedRole)
+  const selected = useMemo(() => 
+    roles.find(r => r.id === selectedRole),
+    [selectedRole]
+  )
+
+  const handleRoleClick = useCallback((roleId: string) => {
+    setSelectedRole(prev => prev === roleId ? null : roleId)
+  }, [])
 
   return (
     <SlideWrapper direction={direction}>
@@ -86,7 +93,7 @@ export default function RolesSlide({ direction }: SlideProps) {
               key={role.id}
               className={`role-card ${role.team}-role ${selectedRole === role.id ? 'selected' : ''}`}
               style={{ '--role-color': role.color } as React.CSSProperties}
-              onClick={() => setSelectedRole(selectedRole === role.id ? null : role.id)}
+              onClick={() => handleRoleClick(role.id)}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.1 * index }}
