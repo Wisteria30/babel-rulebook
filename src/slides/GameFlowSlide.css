@@ -88,11 +88,16 @@
   margin-bottom: 1rem;
 }
 
-.phases-mini {
+.phases-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.phases-row {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 0.5rem;
 }
 
@@ -175,7 +180,7 @@
     font-size: 0.65rem;
   }
   
-  .phases-mini {
+  .phases-row {
     gap: 0.3rem;
   }
   

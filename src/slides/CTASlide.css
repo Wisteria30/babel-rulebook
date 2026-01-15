@@ -72,11 +72,35 @@
 /* Actions */
 .cta-actions {
   margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .cta-main-btn {
-  padding: 1.2rem 3rem;
-  font-size: 1.2rem;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+}
+
+.cta-main-btn.disabled {
+  background: rgba(100, 100, 100, 0.3);
+  border-color: rgba(150, 150, 150, 0.5);
+  color: var(--text-muted);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.cta-main-btn.disabled:hover {
+  transform: none;
+  background: rgba(100, 100, 100, 0.3);
+  box-shadow: none;
+}
+
+.coming-soon {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0;
 }
 
 /* Footer */

@@ -94,12 +94,12 @@ export default function CTASlide({ direction }: SlideProps) {
           transition={{ delay: 1.3 }}
         >
           <motion.button
-            className="btn btn-primary cta-main-btn"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="btn cta-main-btn disabled"
+            disabled
           >
-            🎮 遊んでみる
+            🛠️ 開発中...
           </motion.button>
+          <p className="coming-soon">近日公開予定</p>
         </motion.div>
 
         <motion.p

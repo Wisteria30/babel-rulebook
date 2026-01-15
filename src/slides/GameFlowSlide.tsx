@@ -15,6 +15,15 @@ const days = [
   { day: 4, name: '4日目', desc: '最後の決断', icon: '🌙' },
 ]
 
+const phases = [
+  { num: 1, name: '役職アクション' },
+  { num: 2, name: '神の審判' },
+  { num: 3, name: '会話' },
+  { num: 4, name: '追放' },
+  { num: 5, name: '実装' },
+  { num: 6, name: 'チェック' },
+]
+
 export default function GameFlowSlide({ direction }: SlideProps) {
   return (
     <SlideWrapper direction={direction}>
@@ -61,35 +70,28 @@ export default function GameFlowSlide({ direction }: SlideProps) {
           transition={{ delay: 0.6 }}
         >
           <h3>各ラウンドの構成</h3>
-          <div className="phases-mini">
-            <div className="phase-mini">
-              <span className="phase-num">1</span>
-              <span>役職アクション</span>
+          <div className="phases-grid">
+            <div className="phases-row">
+              {phases.slice(0, 3).map((phase, i) => (
+                <>
+                  <div key={phase.num} className="phase-mini">
+                    <span className="phase-num">{phase.num}</span>
+                    <span>{phase.name}</span>
+                  </div>
+                  {i < 2 && <div className="phase-arrow">→</div>}
+                </>
+              ))}
             </div>
-            <div className="phase-arrow">→</div>
-            <div className="phase-mini">
-              <span className="phase-num">2</span>
-              <span>神の審判</span>
-            </div>
-            <div className="phase-arrow">→</div>
-            <div className="phase-mini">
-              <span className="phase-num">3</span>
-              <span>会話</span>
-            </div>
-            <div className="phase-arrow">→</div>
-            <div className="phase-mini">
-              <span className="phase-num">4</span>
-              <span>追放</span>
-            </div>
-            <div className="phase-arrow">→</div>
-            <div className="phase-mini">
-              <span className="phase-num">5</span>
-              <span>実装</span>
-            </div>
-            <div className="phase-arrow">→</div>
-            <div className="phase-mini">
-              <span className="phase-num">6</span>
-              <span>チェック</span>
+            <div className="phases-row">
+              {phases.slice(3, 6).map((phase, i) => (
+                <>
+                  <div key={phase.num} className="phase-mini">
+                    <span className="phase-num">{phase.num}</span>
+                    <span>{phase.name}</span>
+                  </div>
+                  {i < 2 && <div className="phase-arrow">→</div>}
+                </>
+              ))}
             </div>
           </div>
         </motion.div>
