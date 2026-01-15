@@ -76,7 +76,7 @@ export default function VictorySlide({ direction }: SlideProps) {
           <div className="flow-arrow">↓</div>
           <div className="flow-step">
             <span className="step-num">2</span>
-            <span>AI最終二値チェック</span>
+            <span>AI最終判定（合格/不合格）</span>
           </div>
         </motion.div>
 
@@ -103,7 +103,7 @@ export default function VictorySlide({ direction }: SlideProps) {
               >
                 <p>チェックリストが全て埋まっている</p>
                 <p>かつ</p>
-                <p>AI二値チェックに合格</p>
+                <p>AI最終判定に合格</p>
                 <div className="result-message success">
                   🎉 塔は完成した！
                 </div>
@@ -129,7 +129,7 @@ export default function VictorySlide({ direction }: SlideProps) {
                 <p>上記を満たさなかった場合全て</p>
                 <ul>
                   <li>チェックリスト未達成</li>
-                  <li>AIチェック不合格</li>
+                  <li>AI最終判定不合格</li>
                 </ul>
                 <div className="result-message failure">
                   💨 塔は崩壊した...
