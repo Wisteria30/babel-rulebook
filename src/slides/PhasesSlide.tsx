@@ -150,7 +150,7 @@ export default function PhasesSlide({ direction }: SlideProps) {
                 </div>
               ))}
 
-              {current.warning && (
+              {'warning' in current && current.warning && (
                 <div className="warning-box">
                   <span className="warning-icon">⚠️</span>
                   {current.warning}

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
-import { ReactNode, useMemo } from 'react'
+import type { ReactNode } from 'react'
+import { useMemo } from 'react'
 
 interface SlideWrapperProps {
   children: ReactNode
@@ -23,7 +24,7 @@ const slideVariants = {
 }
 
 const transition = {
-  x: { type: 'spring', stiffness: 300, damping: 30 },
+  x: { type: 'spring' as const, stiffness: 300, damping: 30 },
   opacity: { duration: 0.3 },
 }
 

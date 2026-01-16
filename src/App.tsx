@@ -36,7 +36,7 @@ function App() {
   }, [])
 
   const goToSlide = useCallback((index: number) => {
-    setDirection(prev => index > currentSlide ? 1 : -1)
+    setDirection(index > currentSlide ? 1 : -1)
     setCurrentSlide(index)
   }, [currentSlide])
 
