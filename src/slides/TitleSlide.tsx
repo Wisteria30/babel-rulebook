@@ -19,7 +19,7 @@ export default function TitleSlide({ direction, onNext }: SlideProps) {
           className="tower-icon-wrapper"
           initial={{ scale: 0, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.3, type: 'spring', stiffness: 500 }}
+          transition={{ duration: 0.3 }}
         >
           <TowerIcon size="large" animate={true} />
         </motion.div>
