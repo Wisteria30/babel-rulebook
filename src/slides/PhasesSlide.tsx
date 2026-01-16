@@ -92,7 +92,7 @@ export default function PhasesSlide({ direction }: SlideProps) {
           className="phases-subtitle"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
+          transition={{ delay: 0.08 }}
         >
           {t('phases.subtitle')}
         </motion.p>
@@ -101,7 +101,7 @@ export default function PhasesSlide({ direction }: SlideProps) {
           className="phase-tabs"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.15 }}
+          transition={{ delay: 0.05 }}
         >
           {phases.map((phase) => (
             <button
@@ -122,7 +122,7 @@ export default function PhasesSlide({ direction }: SlideProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.12 }}
           >
             <div className="panel-header">
               <span className="panel-icon">{current.icon}</span>

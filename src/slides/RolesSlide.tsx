@@ -63,7 +63,7 @@ export default function RolesSlide({ direction }: SlideProps) {
           className="roles-subtitle"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
+          transition={{ delay: 0.08 }}
         >
           {t('roles.subtitle')}
         </motion.p>
@@ -72,7 +72,7 @@ export default function RolesSlide({ direction }: SlideProps) {
           className="roles-grid"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.15 }}
+          transition={{ delay: 0.05 }}
         >
           {roles.map((role, index) => (
             <motion.div

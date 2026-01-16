@@ -25,8 +25,8 @@ const slideVariants = {
 }
 
 const transition = {
-  x: { type: 'spring' as const, stiffness: 400, damping: 35 },
-  opacity: { duration: 0.15 },
+  x: { type: 'tween' as const, duration: 0.2, ease: 'easeOut' },
+  opacity: { duration: 0.1 },
 }
 
 export default function SlideWrapper({ children, direction, className = '' }: SlideWrapperProps) {

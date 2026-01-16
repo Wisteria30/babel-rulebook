@@ -25,7 +25,7 @@ export default function TowerIcon({ size = 'medium', animate = true }: TowerIcon
             className="tower-block"
             initial={animate ? { opacity: 0, y: -20 } : false}
             animate={animate ? { opacity: 1, y: 0 } : false}
-            transition={{ delay: index * 0.05, duration: 0.2 }}
+            transition={{ delay: index * 0.03, duration: 0.12 }}
             style={{ width: layerWidths[index] }}
           />
         ))}
@@ -33,7 +33,7 @@ export default function TowerIcon({ size = 'medium', animate = true }: TowerIcon
           className="tower-peak"
           initial={animate ? { opacity: 0, scale: 0 } : false}
           animate={animate ? { opacity: 1, scale: 1 } : false}
-          transition={{ delay: 0.4, duration: 0.2 }}
+          transition={{ delay: 0.25, duration: 0.12 }}
         />
       </div>
       <div className="tower-base-ground" />

@@ -27,7 +27,7 @@ export default function VictorySlide({ direction }: SlideProps) {
           className="victory-subtitle"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
+          transition={{ delay: 0.08 }}
         >
           {t('victory.subtitle')}
         </motion.p>
@@ -36,7 +36,7 @@ export default function VictorySlide({ direction }: SlideProps) {
           className="checklist-section"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.15 }}
+          transition={{ delay: 0.05 }}
         >
           <h3>{t('victory.checklistTitle')}</h3>
           <p className="checklist-desc">{t('victory.checklistDesc')}</p>
@@ -64,7 +64,7 @@ export default function VictorySlide({ direction }: SlideProps) {
           className="judgment-flow"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.25 }}
+          transition={{ delay: 0.085 }}
         >
           <div className="flow-step">
             <span className="step-num">1</span>
@@ -86,7 +86,7 @@ export default function VictorySlide({ direction }: SlideProps) {
           className="result-cards"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.35 }}
+          transition={{ delay: 0.155 }}
         >
           <motion.div
             className={`result-card human-win ${
