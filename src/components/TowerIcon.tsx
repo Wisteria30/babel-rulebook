@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useMemo } from 'react'
 import './TowerIcon.css'
 
 interface TowerIconProps {
@@ -6,35 +7,36 @@ interface TowerIconProps {
   animate?: boolean
 }
 
-const layers = [0, 1, 2, 3, 4, 5] as const
+const layers = [1, 2, 3, 4, 5, 6, 7] as const
 
 export default function TowerIcon({ size = 'medium', animate = true }: TowerIconProps) {
+  const layerWidths = useMemo(() => 
+    layers.map((_, index) => `${100 - index * 12}%`),
+    []
+  )
+
   return (
     <div className={`tower-icon-container ${size}`}>
       <div className="tower-glow" />
       <div className="tower-structure">
-        {/* Peak triangle */}
-        <motion.div
+        {layers.map((layer, index) => (
+          <motion.div
+            key={layer}
+            className="tower-block"
+            initial={animate ? { opacity: 0, y: -20 } : false}
+            animate={animate ? { opacity: 1, y: 0 } : false}
+            transition={{ delay: index * 0.1, duration: 0.4 }}
+            style={{ width: layerWidths[index] }}
+          />
+        ))}
+        <motion.div 
           className="tower-peak"
           initial={animate ? { opacity: 0, scale: 0 } : false}
           animate={animate ? { opacity: 1, scale: 1 } : false}
-          transition={{ delay: 0, duration: 0.4, type: 'spring' }}
+          transition={{ delay: 0.8, duration: 0.3 }}
         />
-        
-        {/* Tower layers - top to bottom, getting wider */}
-        {layers.map((_, index) => (
-          <motion.div
-            key={index}
-            className="tower-block"
-            initial={animate ? { opacity: 0, y: -10 } : false}
-            animate={animate ? { opacity: 1, y: 0 } : false}
-            transition={{ delay: 0.1 + index * 0.08, duration: 0.3 }}
-            style={{ 
-              width: `${40 + index * 10}%`,
-            }}
-          />
-        ))}
       </div>
+      <div className="tower-base-ground" />
     </div>
   )
 }
