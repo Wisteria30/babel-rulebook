@@ -1,4 +1,4 @@
-# BABEL Rulebook
+# BABEL
 
 [English](#english) | [日本語](#日本語)
 
@@ -6,179 +6,83 @@
 
 ## English
 
-Interactive rulebook for "BABEL". View the game overview, roles, phases, and victory conditions in a slide format.
+### Defy the will of God. Complete the tower.
 
-**[https://wisteria30.github.io/babel-rulebook/](https://wisteria30.github.io/babel-rulebook/)**
+![BABEL](https://img.shields.io/badge/Players-4-blue)
+![Duration](https://img.shields.io/badge/Time-30~40min-green)
+![Genre](https://img.shields.io/badge/Genre-Vibe%20Coding%20%C3%97%20Social%20Deduction-purple)
 
-### What is BABEL?
+**BABEL** is a 4-player cooperative board game where you instruct AI to build an app (“the tower”). But hiding among the players is a **“God's Apostle”** secretly trying to destroy it.
 
-A 4-player cooperative board game where you instruct AI to build an app ("the tower"). However, hiding among the players is a "God's Apostle" secretly trying to destroy it.
+Will you complete the tower? Or will betrayal bring it crashing down?
 
-- 👥 **Genre**: Vibe Coding × Social Deduction
-- ⏱️ **Play Time**: 30-40 minutes
-- 🎯 **Players**: 4 (exactly)
+📖 **[View Interactive Rulebook](https://wisteria30.github.io/babel-rulebook/)** ← Start here!
 
-### Features
+### 🎮 How It Works
 
-- 📱 Responsive design (PC / Mobile)
-- 👆 Swipe & keyboard navigation
-- ✨ Framer Motion animations
-- 🌐 Multilingual support (EN/JA)
+1. **Cooperate** — Discuss and agree on what to build each round
+2. **Instruct AI** — Each player secretly gives instructions to the AI
+3. **Watch Out** — The hidden traitor may sabotage the instructions
+4. **Deduce** — Use special roles like Prophet and Medium to find the saboteur
+5. **Complete** — After 4 rounds, check if the app works!
 
-### Slide Contents
+### ✨ Features
 
-1. **Title** - Game concept introduction
-2. **Overview** - Basic rules explanation
-3. **Roles** - Each role's abilities
-4. **Game Flow** - Round structure
-5. **Phase Details** - Detailed rules for each phase
-6. **Victory Conditions** - Checklist explanation
-7. **CTA** - Call to action
+- 🤖 **Real-time AI integration** — The AI actually builds based on your instructions
+- 🔍 **Social deduction** — Find the traitor through discussion and deduction
+- ⚡ **God's interference** — Random events like "Silence" and "Word Reversal" shake things up
+- 🎭 **4 unique roles** — Prophet, Medium, Citizen, and God's Apostle
 
-### Controls
+### 📚 Documentation
 
-| Action | Method |
-|--------|--------|
-| Next slide | `→` key / Space / Swipe left |
-| Previous slide | `←` key / Swipe right |
-| Select slide | Click dots at bottom |
-| Switch language | Click EN/JA button (top-right) |
+- 📖 [Full Rulebook (Printable)](rulebook.md) — Complete rules in text format
+- 🛠️ [Developer Documentation](DEVELOPMENT.md) — Setup, tech stack, contributing
 
-### Development
+### 🔗 Links
 
-#### Setup
-
-```bash
-bun install
-```
-
-#### Dev Server
-
-```bash
-bun run dev
-```
-
-#### Build
-
-```bash
-bun run build
-```
-
-### Deployment
-
-#### GitHub Pages
-
-Automatically deployed when pushing to `main` branch.
-
-For first-time setup, go to GitHub repository Settings > Pages and select "GitHub Actions" as the source.
-
-#### Self-hosting
-
-After building, serve the `dist/` directory with any static file server.
-
-```bash
-# Go server example
-go build -o server server.go
-./server
-```
-
-### Tech Stack
-
-- [React](https://react.dev/) 19
-- [TypeScript](https://www.typescriptlang.org/)
-- [Vite](https://vite.dev/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [react-i18next](https://react.i18next.com/)
-- [react-swipeable](https://github.com/FormidableLabs/react-swipeable)
+- 🎮 [Play the Interactive Rulebook](https://wisteria30.github.io/babel-rulebook/)
 
 ---
 
 ## 日本語
 
-「BABEL」のインタラクティブルールブック。スライド形式でゲームの概要・役職・フェーズ・勝利条件を確認できます。
+### 神の意志に抗え。塔を完成せよ。
 
-**[https://wisteria30.github.io/babel-rulebook/](https://wisteria30.github.io/babel-rulebook/)**
+![BABEL](https://img.shields.io/badge/プレイ人数-4人専用-blue)
+![Duration](https://img.shields.io/badge/プレイ時間-30~40分-green)
+![Genre](https://img.shields.io/badge/ジャンル-Vibe%20Coding%20%C3%97%20人狼系推理-purple)
 
-### BABELとは
+**BABEL**は4人専用の協力型ボードゲーム。AIに指示を出してアプリ（「塔」）を作り上げますが、プレイヤーの中にはこっそり塔を崩そうとする**「神の使い」**が潜んでいます。
 
-4人専用の協力型ボードゲーム。AIに指示を出してアプリ（「塔」）を作り上げますが、プレイヤーの中にはこっそり塔を崩そうとする「神の使い」が潜んでいます。
+塔は完成するか？それとも裏切りによって崩壊するのか？
 
-- 👥 **ジャンル**: Vibe Coding × 人狼系推理
-- ⏱️ **プレイ時間**: 30〜40分
-- 🎯 **プレイ人数**: 4人専用
+📖 **[インタラクティブルールブックを見る](https://wisteria30.github.io/babel-rulebook/)** ← まずはここから！
 
-### 機能
+### 🎮 遊び方
 
-- 📱 レスポンシブ対応（PC / スマホ）
-- 👆 スワイプ & キーボード操作
-- ✨ Framer Motionによるアニメーション
-- 🌐 多言語対応（日/英）
+1. **協力** — 毎ラウンド、何を作るか話し合って決める
+2. **AIに指示** — 各プレイヤーが秘密裏にAIへ指示を出す
+3. **警戒** — 隠れた裏切り者が指示を妨害しているかも
+4. **推理** — 占い師や霊媒師の能力で妨害者を見つける
+5. **完成** — 4ラウンド後、アプリが動くかチェック！
 
-### スライド構成
+### ✨ 特徴
 
-1. **タイトル** - ゲームのコンセプト紹介
-2. **概要** - 基本ルールの説明
-3. **役職** - 各役職の能力紹介
-4. **ゲームの流れ** - ラウンド構成
-5. **フェーズ詳細** - 各フェーズの詳細ルール
-6. **勝利条件** - チェックリスト説明
-7. **CTA** - ゲーム開始への導線
+- 🤖 **リアルタイムAI連携** — AIが実際に指示を基にアプリを作る
+- 🔍 **人狼系推理** — 議論と推理で裏切り者を見つける
+- ⚡ **神の妨害** — 「沈黙」や「言葉の反転」のランダムイベント
+- 🎭 **4つの役職** — 占い師、霊媒師、市民、神の使い
 
-### 操作方法
+### 📚 ドキュメント
 
-| 操作 | 方法 |
-|------|------|
-| 次のスライド | `→` キー / スペース / 左スワイプ |
-| 前のスライド | `←` キー / 右スワイプ |
-| スライド選択 | 下部のドットをクリック |
-| 言語切り替え | 右上のEN/JAボタンをクリック |
+- 📖 [ルールブック（印刷用）](rulebook.md) — テキスト形式の完全ルール
+- 🛠️ [開発者向けドキュメント](DEVELOPMENT.md) — セットアップ、技術スタック、貢献方法
 
-### 開発
+### 🔗 リンク
 
-#### セットアップ
+- 🎮 [インタラクティブルールブックをプレイ](https://wisteria30.github.io/babel-rulebook/)
 
-```bash
-bun install
-```
-
-#### 開発サーバー
-
-```bash
-bun run dev
-```
-
-#### ビルド
-
-```bash
-bun run build
-```
-
-### デプロイ
-
-#### GitHub Pages
-
-`main`ブランチにプッシュすると自動でデプロイされます。
-
-初回のみ、GitHubリポジトリのSettings > Pagesで「GitHub Actions」をソースとして選択してください。
-
-#### セルフホスト
-
-ビルド後、`dist/`ディレクトリを任意の静的ファイルサーバーで配信できます。
-
-```bash
-# Goサーバーの例
-go build -o server server.go
-./server
-```
-
-### 技術スタック
-
-- [React](https://react.dev/) 19
-- [TypeScript](https://www.typescriptlang.org/)
-- [Vite](https://vite.dev/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [react-i18next](https://react.i18next.com/)
-- [react-swipeable](https://github.com/FormidableLabs/react-swipeable)
+---
 
 ## License
 
