@@ -86,5 +86,7 @@ Will you complete the tower? Or will betrayal bring it crashing down?
 
 ## License
 
-This project is **NOT** open source. All rights reserved.  
+Copyright (c) 2026 BABEL. All Rights Reserved.
+
+This project is **NOT** open source.  
 Viewing is permitted, but copying, modification, and redistribution are prohibited.
