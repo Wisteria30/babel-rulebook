@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useTranslation, Trans } from 'react-i18next'
 import SlideWrapper from '../components/SlideWrapper'
 import TowerIcon from '../components/TowerIcon'
 import './CTASlide.css'
@@ -9,6 +10,8 @@ interface SlideProps {
 }
 
 export default function CTASlide({ direction }: SlideProps) {
+  const { t } = useTranslation()
+
   return (
     <SlideWrapper direction={direction}>
       <div className="cta-content">
@@ -26,7 +29,7 @@ export default function CTASlide({ direction }: SlideProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-          協力して、塔を築け。
+          {t('cta.heading')}
         </motion.h2>
 
         <motion.p
@@ -35,8 +38,7 @@ export default function CTASlide({ direction }: SlideProps) {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
         >
-          信頼と疑念。協力と裏切り。<br />
-          神の妨害に抗いながら、みんなでアプリを完成させろ。
+          <Trans i18nKey="cta.tagline" components={{ br: <br /> }} />
         </motion.p>
 
         <motion.div
@@ -54,19 +56,19 @@ export default function CTASlide({ direction }: SlideProps) {
         >
           <div className="summary-item">
             <span className="summary-icon">👥</span>
-            <span>4人協力</span>
+            <span>{t('cta.summary.players')}</span>
           </div>
           <div className="summary-item">
             <span className="summary-icon">⏱️</span>
-            <span>30〜40分</span>
+            <span>{t('cta.summary.duration')}</span>
           </div>
           <div className="summary-item">
             <span className="summary-icon">🔍</span>
-            <span>人狼系推理</span>
+            <span>{t('cta.summary.deduction')}</span>
           </div>
           <div className="summary-item">
             <span className="summary-icon">⌨️</span>
-            <span>Vibe Coding</span>
+            <span>{t('cta.summary.vibeCoding')}</span>
           </div>
         </motion.div>
 
@@ -77,13 +79,13 @@ export default function CTASlide({ direction }: SlideProps) {
           transition={{ delay: 1.1 }}
         >
           <div className="feature-badge">
-            <span>🤝</span> 協力ベース
+            <span>🤝</span> {t('cta.features.coop')}
           </div>
           <div className="feature-badge">
-            <span>💻</span> リアルタイムAI
+            <span>💻</span> {t('cta.features.ai')}
           </div>
           <div className="feature-badge">
-            <span>🎭</span> 心理戦
+            <span>🎭</span> {t('cta.features.psych')}
           </div>
         </motion.div>
 
@@ -93,13 +95,10 @@ export default function CTASlide({ direction }: SlideProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.3 }}
         >
-          <motion.button
-            className="btn cta-main-btn disabled"
-            disabled
-          >
-            🛠️ 開発中...
+          <motion.button className="btn cta-main-btn disabled" disabled>
+            {t('cta.button')}
           </motion.button>
-          <p className="coming-soon">近日公開予定</p>
+          <p className="coming-soon">{t('cta.comingSoon')}</p>
         </motion.div>
 
         <motion.p
@@ -108,7 +107,7 @@ export default function CTASlide({ direction }: SlideProps) {
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
         >
-          ← → キーで最初から確認できます
+          {t('common.reviewHint')}
         </motion.p>
       </div>
     </SlideWrapper>

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useTranslation, Trans } from 'react-i18next'
 import SlideWrapper from '../components/SlideWrapper'
 import './OverviewSlide.css'
 
@@ -23,6 +24,8 @@ const itemVariants = {
 }
 
 export default function OverviewSlide({ direction }: SlideProps) {
+  const { t } = useTranslation()
+
   return (
     <SlideWrapper direction={direction}>
       <motion.div
@@ -31,20 +34,30 @@ export default function OverviewSlide({ direction }: SlideProps) {
         initial="hidden"
         animate="visible"
       >
-        <motion.h2 variants={itemVariants}>ゲームの概要</motion.h2>
+        <motion.h2 variants={itemVariants}>{t('overview.heading')}</motion.h2>
 
         <motion.div className="overview-concept" variants={itemVariants}>
           <p className="concept-text">
-            4人で<span className="highlight">協力</span>してAIに指示を出し、<br className="mobile-br" />
-            <span className="highlight">アプリ（塔）</span>を完成させる。
+            <Trans
+              i18nKey="overview.concept"
+              components={{
+                1: <span className="highlight" />,
+                br: <br className="mobile-br" />,
+              }}
+            />
           </p>
         </motion.div>
 
         <motion.div className="god-system-box" variants={itemVariants}>
           <div className="god-icon">⚡</div>
           <div className="god-text">
-            <h4>神（システム）の妨害</h4>
-            <p>神は塔の完成を許さない。<br />ランダムに「沈黙」や「言葉の反転」で妨害してくる。</p>
+            <h4>{t('overview.godSystem.title')}</h4>
+            <p>
+              <Trans
+                i18nKey="overview.godSystem.desc"
+                components={{ br: <br /> }}
+              />
+            </p>
           </div>
         </motion.div>
 
@@ -55,15 +68,25 @@ export default function OverviewSlide({ direction }: SlideProps) {
         <motion.div className="traitor-box" variants={itemVariants}>
           <div className="traitor-icon">👿</div>
           <div className="traitor-text">
-            <h4>内通者の存在</h4>
-            <p>プレイヤーの中に<span className="danger">神の使い</span>が潜んでいる。<br />協力の中に裏切りが混ざる——誰を信じる？</p>
+            <h4>{t('overview.traitor.title')}</h4>
+            <p>
+              <Trans
+                i18nKey="overview.traitor.desc"
+                components={{
+                  1: <span className="danger" />,
+                  br: <br />,
+                }}
+              />
+            </p>
           </div>
         </motion.div>
 
         <motion.div className="divider" variants={itemVariants} />
 
         <motion.p className="overview-goal" variants={itemVariants}>
-          <strong>協力 × 推理 × 心理戦。<br />4ラウンド後、塔は完成するか？</strong>
+          <strong>
+            <Trans i18nKey="overview.goal" components={{ br: <br /> }} />
+          </strong>
         </motion.p>
       </motion.div>
     </SlideWrapper>

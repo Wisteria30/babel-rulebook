@@ -1,0 +1,184 @@
+{
+  "common": {
+    "keyHint": "Use ← → keys to navigate",
+    "reviewHint": "Use ← → keys to review from the start"
+  },
+  "title": {
+    "heading": "BABEL",
+    "subtitle": "Defy the will of God. Complete the tower.",
+    "genre": "👥 Cooperative Vibe Coding × Social Deduction",
+    "tagline": "Work together to instruct AI and build an app.<br />But someone is trying to sabotage it—",
+    "players": "4 Players",
+    "duration": "30-40 min",
+    "startButton": "View Rules"
+  },
+  "overview": {
+    "heading": "Game Overview",
+    "concept": "4 players <1>cooperate</1> to instruct AI and<br />build an <1>app (the tower)</1>.",
+    "godSystem": {
+      "title": "God (System) Interference",
+      "desc": "God won't allow the tower to be completed.<br />Randomly interferes with 'Silence' or 'Word Reversal'."
+    },
+    "traitor": {
+      "title": "Hidden Traitor",
+      "desc": "Among the players hides a <1>God's Apostle</1>.<br />Betrayal mixed with cooperation—whom do you trust?"
+    },
+    "goal": "Cooperation × Deduction × Mind Games.<br />After 4 rounds, will the tower be complete?"
+  },
+  "roles": {
+    "heading": "Roles",
+    "subtitle": "Click cards to view details",
+    "humanTeam": "Human Team",
+    "godTeam": "God Team",
+    "ability": "Ability",
+    "result": "Result",
+    "goal": "Objective",
+    "prophet": {
+      "name": "Prophet",
+      "ability": "Divine one player each round",
+      "result": "Learn if they are 'Apostle' or 'Human'",
+      "goal": "Identify the saboteur and exile them each round"
+    },
+    "medium": {
+      "name": "Medium",
+      "ability": "View summary of all AI instructions from last round",
+      "result": "Cannot identify individuals. Only overall impression",
+      "goal": "Share if any suspicious instructions were given"
+    },
+    "citizen": {
+      "name": "Citizen",
+      "ability": "No special ability",
+      "result": "—",
+      "goal": "Use deduction and discussion to find the saboteur"
+    },
+    "apostle": {
+      "name": "God's Apostle",
+      "ability": "Disguise as human and give sabotage instructions",
+      "result": "—",
+      "goal": "Destroy the app without getting caught"
+    }
+  },
+  "gameFlow": {
+    "heading": "Game Flow",
+    "subtitle": "Victory is determined after 4 rounds (4 days)",
+    "days": {
+      "setup": { "name": "Setup", "desc": "Role distribution" },
+      "day1": { "name": "Day 1", "desc": "Initial probing" },
+      "day2": { "name": "Day 2", "desc": "Gathering info" },
+      "day3": { "name": "Day 3", "desc": "Conviction or doubt" },
+      "day4": { "name": "Day 4", "desc": "Final decision" }
+    },
+    "roundTitle": "Round Structure",
+    "phases": {
+      "action": "Role Action",
+      "divine": "Divine Judgment",
+      "talk": "Discussion",
+      "exile": "Exile",
+      "implement": "Implement",
+      "check": "Check"
+    },
+    "talkTime": "Discussion Phase: ~4 min",
+    "charLimit": "AI Instructions: 100 chars max"
+  },
+  "phases": {
+    "heading": "Phase Details",
+    "subtitle": "Click tabs to view details of each phase",
+    "action": {
+      "name": "Role Action",
+      "desc": "Perform role-specific actions (private, no talking)",
+      "prophet": "Prophet",
+      "prophetAction": "Divine 1 player → Learn if 'Apostle' or 'Human'",
+      "medium": "Medium",
+      "mediumAction": "View summary of all AI instructions from last round"
+    },
+    "divine": {
+      "name": "Divine Judgment",
+      "desc": "God (System) determines 2 interventions",
+      "silence": "Decree of Silence",
+      "silenceAction": "If triggered, skip Discussion and Exile phases",
+      "reversal": "Word Reversal",
+      "reversalAction": "If triggered, adjectives mean the opposite (simple→complex)",
+      "warning": "You never know when these will trigger!"
+    },
+    "talk": {
+      "name": "Discussion Phase",
+      "desc": "~4 minutes of free discussion (skipped if Silence)",
+      "deduce": "Deduce",
+      "deduceAction": "Who is the Apostle?",
+      "share": "Share",
+      "shareAction": "Divination/Medium results (lying allowed)",
+      "agree": "Agree",
+      "agreeAction": "Who builds what"
+    },
+    "exile": {
+      "name": "Exile Phase",
+      "desc": "Vote to 'suspend' one player (skipped if Silence)",
+      "note": "Note",
+      "noteAction": "Exiled players don't die. They just can't give AI instructions that round",
+      "strategy": "Strategy",
+      "strategyAction": "If you identify the Apostle, you can neutralize them every round!"
+    },
+    "implement": {
+      "name": "Implementation Phase",
+      "desc": "Each player gives AI instructions (100 chars, no talking)",
+      "human": "Human",
+      "humanAction": "Give instructions as agreed",
+      "apostle": "Apostle",
+      "apostleAction": "Sneak in sabotage instructions without being caught",
+      "warning": "If Word Reversal is active, adjectives are flipped!"
+    },
+    "check": {
+      "name": "Checklist Update",
+      "desc": "After AI execution, verify tower status",
+      "item1": "Screen displays",
+      "item2": "User can interact",
+      "item3": "Responses to interactions exist",
+      "item4": "No obvious breakage"
+    }
+  },
+  "victory": {
+    "heading": "Victory Conditions",
+    "subtitle": "Determined at the end of Day 4",
+    "checklistTitle": "Checklist",
+    "checklistDesc": "Are all of the following met at the end of the final round?",
+    "check1": "Screen displays",
+    "check2": "User can interact",
+    "check3": "Responses to interactions exist",
+    "check4": "No obvious breakage (unplayable state)",
+    "step1": "Checklist verification",
+    "step2": "AI Final Judgment (Complete/Incomplete)",
+    "fail": "✘ Any item failed",
+    "pass": "✔ All passed",
+    "humanWin": {
+      "title": "Human Team Victory",
+      "condition1": "All checklist items are met",
+      "and": "AND",
+      "condition2": "AI judges 'Complete'",
+      "message": "🎉 The tower is complete!"
+    },
+    "godWin": {
+      "title": "God Team Victory",
+      "condition": "If the above conditions are not met",
+      "reason1": "Checklist incomplete",
+      "reason2": "AI judges 'Incomplete'",
+      "message": "💨 The tower has collapsed..."
+    }
+  },
+  "cta": {
+    "heading": "Cooperate. Build the tower.",
+    "tagline": "Trust and suspicion. Cooperation and betrayal.<br />Defy God's interference and complete the app together.",
+    "summary": {
+      "players": "4-Player Co-op",
+      "duration": "30-40 min",
+      "deduction": "Social Deduction",
+      "vibeCoding": "Vibe Coding"
+    },
+    "features": {
+      "coop": "Co-op Based",
+      "ai": "Real-time AI",
+      "psych": "Mind Games"
+    },
+    "button": "🛠️ In Development...",
+    "comingSoon": "Coming Soon"
+  }
+}

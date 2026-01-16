@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useState, useMemo, useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
 import SlideWrapper from '../components/SlideWrapper'
 import './RolesSlide.css'
 
@@ -11,56 +12,41 @@ interface SlideProps {
 const roles = [
   {
     id: 'prophet',
-    name: '占い師',
     team: 'human',
     icon: '🔮',
     color: '#6495ed',
-    ability: '毎ラウンド、1人を占う',
-    result: '「神の使い」か「人間」か分かる',
-    goal: '妨害者を特定して、毎ラウンド追放したい',
   },
   {
     id: 'medium',
-    name: '霊媒師',
     team: 'human',
     icon: '👁️',
     color: '#9370db',
-    ability: '前ラウンドの全AI指示の要約を確認',
-    result: '個人特定不可。全体の雰囲気のみ',
-    goal: '怪しい指示があったかをチームに共有したい',
   },
   {
     id: 'citizen',
-    name: '市民',
     team: 'human',
     icon: '👤',
     color: '#3cb371',
-    ability: '特殊能力なし',
-    result: '—',
-    goal: '推理と会話で妨害者を見破りたい',
   },
   {
     id: 'apostle',
-    name: '神の使い',
     team: 'god',
     icon: '👿',
     color: '#dc143c',
-    ability: '人間に化けて妨害指示を出す',
-    result: '—',
-    goal: 'バレずにアプリを壊したい',
   },
 ] as const
 
 export default function RolesSlide({ direction }: SlideProps) {
+  const { t } = useTranslation()
   const [selectedRole, setSelectedRole] = useState<string | null>(null)
 
-  const selected = useMemo(() => 
-    roles.find(r => r.id === selectedRole),
+  const selected = useMemo(
+    () => roles.find((r) => r.id === selectedRole),
     [selectedRole]
   )
 
   const handleRoleClick = useCallback((roleId: string) => {
-    setSelectedRole(prev => prev === roleId ? null : roleId)
+    setSelectedRole((prev) => (prev === roleId ? null : roleId))
   }, [])
 
   return (
@@ -70,7 +56,7 @@ export default function RolesSlide({ direction }: SlideProps) {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          役職紹介
+          {t('roles.heading')}
         </motion.h2>
 
         <motion.p
@@ -79,7 +65,7 @@ export default function RolesSlide({ direction }: SlideProps) {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          カードをクリックして詳細を確認
+          {t('roles.subtitle')}
         </motion.p>
 
         <motion.div
@@ -91,7 +77,9 @@ export default function RolesSlide({ direction }: SlideProps) {
           {roles.map((role, index) => (
             <motion.div
               key={role.id}
-              className={`role-card ${role.team}-role ${selectedRole === role.id ? 'selected' : ''}`}
+              className={`role-card ${role.team}-role ${
+                selectedRole === role.id ? 'selected' : ''
+              }`}
               style={{ '--role-color': role.color } as React.CSSProperties}
               onClick={() => handleRoleClick(role.id)}
               initial={{ opacity: 0, scale: 0.8 }}
@@ -101,9 +89,9 @@ export default function RolesSlide({ direction }: SlideProps) {
               whileTap={{ scale: 0.95 }}
             >
               <div className="role-icon">{role.icon}</div>
-              <h3 className="role-name">{role.name}</h3>
+              <h3 className="role-name">{t(`roles.${role.id}.name`)}</h3>
               <span className="role-team-badge">
-                {role.team === 'human' ? '人間陣営' : '神陣営'}
+                {role.team === 'human' ? t('roles.humanTeam') : t('roles.godTeam')}
               </span>
             </motion.div>
           ))}
@@ -118,23 +106,29 @@ export default function RolesSlide({ direction }: SlideProps) {
           >
             <div className="detail-header">
               <span className="detail-icon">{selected.icon}</span>
-              <h3>{selected.name}</h3>
+              <h3>{t(`roles.${selected.id}.name`)}</h3>
             </div>
             <div className="detail-body">
               <div className="detail-row">
-                <span className="detail-label">能力</span>
-                <span className="detail-value">{selected.ability}</span>
+                <span className="detail-label">{t('roles.ability')}</span>
+                <span className="detail-value">
+                  {t(`roles.${selected.id}.ability`)}
+                </span>
               </div>
-              {selected.result !== '—' && (
+              {t(`roles.${selected.id}.result`) !== '—' && (
                 <div className="detail-row">
-                  <span className="detail-label">結果</span>
-                  <span className="detail-value">{selected.result}</span>
+                  <span className="detail-label">{t('roles.result')}</span>
+                  <span className="detail-value">
+                    {t(`roles.${selected.id}.result`)}
+                  </span>
                 </div>
               )}
               <div className="detail-goal">
                 <span className="goal-icon">🎯</span>
-                <span className="goal-label">やりたいこと</span>
-                <span className="goal-text">{selected.goal}</span>
+                <span className="goal-label">{t('roles.goal')}</span>
+                <span className="goal-text">
+                  {t(`roles.${selected.id}.goal`)}
+                </span>
               </div>
             </div>
           </motion.div>

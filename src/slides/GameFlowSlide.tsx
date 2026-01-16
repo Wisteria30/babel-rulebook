@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import SlideWrapper from '../components/SlideWrapper'
 import './GameFlowSlide.css'
 
@@ -8,23 +9,25 @@ interface SlideProps {
 }
 
 const days = [
-  { day: 0, name: 'セットアップ', desc: '役職配布', icon: '🎴' },
-  { day: 1, name: '1日目', desc: '最初の探り合い', icon: '🌅' },
-  { day: 2, name: '2日目', desc: '情報が集まる', icon: '☀️' },
-  { day: 3, name: '3日目', desc: '確信か疑念か', icon: '🌤️' },
-  { day: 4, name: '4日目', desc: '最後の決断', icon: '🌙' },
+  { day: 0, key: 'setup', icon: '🂴' },
+  { day: 1, key: 'day1', icon: '🌅' },
+  { day: 2, key: 'day2', icon: '☀️' },
+  { day: 3, key: 'day3', icon: '🌤️' },
+  { day: 4, key: 'day4', icon: '🌙' },
 ]
 
 const phases = [
-  { num: 1, name: '役職アクション' },
-  { num: 2, name: '神の審判' },
-  { num: 3, name: '会話' },
-  { num: 4, name: '追放' },
-  { num: 5, name: '実装' },
-  { num: 6, name: 'チェック' },
+  { num: 1, key: 'action' },
+  { num: 2, key: 'divine' },
+  { num: 3, key: 'talk' },
+  { num: 4, key: 'exile' },
+  { num: 5, key: 'implement' },
+  { num: 6, key: 'check' },
 ]
 
 export default function GameFlowSlide({ direction }: SlideProps) {
+  const { t } = useTranslation()
+
   return (
     <SlideWrapper direction={direction}>
       <div className="flow-content">
@@ -32,7 +35,7 @@ export default function GameFlowSlide({ direction }: SlideProps) {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          ゲームの流れ
+          {t('gameFlow.heading')}
         </motion.h2>
 
         <motion.p
@@ -41,7 +44,7 @@ export default function GameFlowSlide({ direction }: SlideProps) {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          4ラウンド（＝4日）で勝敗が決まる
+          {t('gameFlow.subtitle')}
         </motion.p>
 
         <div className="timeline">
@@ -56,8 +59,8 @@ export default function GameFlowSlide({ direction }: SlideProps) {
               <div className="timeline-icon">{d.icon}</div>
               <div className="timeline-connector" />
               <div className="timeline-content">
-                <h4>{d.name}</h4>
-                <p>{d.desc}</p>
+                <h4>{t(`gameFlow.days.${d.key}.name`)}</h4>
+                <p>{t(`gameFlow.days.${d.key}.desc`)}</p>
               </div>
             </motion.div>
           ))}
@@ -69,14 +72,14 @@ export default function GameFlowSlide({ direction }: SlideProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
         >
-          <h3>各ラウンドの構成</h3>
+          <h3>{t('gameFlow.roundTitle')}</h3>
           <div className="phases-grid">
             <div className="phases-row">
               {phases.slice(0, 3).map((phase, i) => (
                 <>
                   <div key={phase.num} className="phase-mini">
                     <span className="phase-num">{phase.num}</span>
-                    <span>{phase.name}</span>
+                    <span>{t(`gameFlow.phases.${phase.key}`)}</span>
                   </div>
                   {i < 2 && <div className="phase-arrow">→</div>}
                 </>
@@ -87,7 +90,7 @@ export default function GameFlowSlide({ direction }: SlideProps) {
                 <>
                   <div key={phase.num} className="phase-mini">
                     <span className="phase-num">{phase.num}</span>
-                    <span>{phase.name}</span>
+                    <span>{t(`gameFlow.phases.${phase.key}`)}</span>
                   </div>
                   {i < 2 && <div className="phase-arrow">→</div>}
                 </>
@@ -104,11 +107,11 @@ export default function GameFlowSlide({ direction }: SlideProps) {
         >
           <div className="time-badge">
             <span className="time-icon">⏱️</span>
-            <span>会話フェーズ：約4分</span>
+            <span>{t('gameFlow.talkTime')}</span>
           </div>
           <div className="time-badge">
             <span className="time-icon">⌨️</span>
-            <span>AI指示：100文字以内</span>
+            <span>{t('gameFlow.charLimit')}</span>
           </div>
         </motion.div>
       </div>

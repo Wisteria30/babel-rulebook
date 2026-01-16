@@ -9,6 +9,7 @@ import PhasesSlide from './slides/PhasesSlide'
 import VictorySlide from './slides/VictorySlide'
 import CTASlide from './slides/CTASlide'
 import Navigation from './components/Navigation'
+import LanguageSwitcher from './components/LanguageSwitcher'
 import './App.css'
 
 const slides = [
@@ -85,6 +86,7 @@ function App() {
 
   return (
     <div className="app" {...swipeHandlers}>
+      <LanguageSwitcher />
       <div className="background-effects">
         <div className="tower-silhouette" />
         <div className="particles" />

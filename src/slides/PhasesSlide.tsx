@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useMemo, useCallback } from 'react'
+import { useTranslation } from 'react-i18next'
 import SlideWrapper from '../components/SlideWrapper'
 import './PhasesSlide.css'
 
@@ -11,76 +12,65 @@ interface SlideProps {
 const phases = [
   {
     id: 'action',
-    name: '役職アクション',
     icon: '🎯',
-    desc: '役職固有の行動を行う（非公開・会話禁止）',
-    details: [
-      { role: '占い師', action: '1人を占う → 「神の使い」か「人間」か判明' },
-      { role: '霊媒師', action: '前ラウンドの全AI指示の要約を確認' },
+    detailKeys: [
+      { labelKey: 'prophet', actionKey: 'prophetAction' },
+      { labelKey: 'medium', actionKey: 'mediumAction' },
     ],
   },
   {
     id: 'divine',
-    name: '神の審判',
     icon: '⚡',
-    desc: '神（システム）が2つの介入を判定',
-    details: [
-      { role: '沈黙の裁定', action: '発動すると会話・追放フェーズをスキップ' },
-      { role: '言葉の反転', action: '発動すると形容詞が逆の意味に（シンプル→複雑）' },
+    detailKeys: [
+      { labelKey: 'silence', actionKey: 'silenceAction' },
+      { labelKey: 'reversal', actionKey: 'reversalAction' },
     ],
-    warning: 'これらはいつ発動するか分からない！',
+    hasWarning: true,
   },
   {
     id: 'talk',
-    name: '会話フェーズ',
     icon: '💬',
-    desc: '約4分、自由に会話（沈黙時はスキップ）',
-    details: [
-      { role: '推理', action: '誰が神の使いか？' },
-      { role: '共有', action: '占い・霊媒結果（嘘可）' },
-      { role: '合意', action: '誰が何を作るか' },
+    detailKeys: [
+      { labelKey: 'deduce', actionKey: 'deduceAction' },
+      { labelKey: 'share', actionKey: 'shareAction' },
+      { labelKey: 'agree', actionKey: 'agreeAction' },
     ],
   },
   {
     id: 'exile',
-    name: '追放フェーズ',
     icon: '🚫',
-    desc: '多数決で1人を「実装停止」に（沈黙時はスキップ）',
-    details: [
-      { role: '注意', action: '追放されても死なない。そのラウンドAI指示が出せないだけ' },
-      { role: '戦略', action: '神の使いを特定できれば、毎ラウンド実質無力化！' },
+    detailKeys: [
+      { labelKey: 'note', actionKey: 'noteAction' },
+      { labelKey: 'strategy', actionKey: 'strategyAction' },
     ],
   },
   {
     id: 'implement',
-    name: '実装依頼フェーズ',
     icon: '⌨️',
-    desc: '各自がAIに指示を出す（100文字以内・会話禁止）',
-    details: [
-      { role: '人間', action: '合意通りの指示を出す' },
-      { role: '神の使い', action: 'バレないように妨害指示を混ぜる' },
+    detailKeys: [
+      { labelKey: 'human', actionKey: 'humanAction' },
+      { labelKey: 'apostle', actionKey: 'apostleAction' },
     ],
-    warning: '言葉の反転が発動していると、形容詞が逆になる！',
+    hasWarning: true,
   },
   {
     id: 'check',
-    name: 'チェックリスト更新',
     icon: '✅',
-    desc: 'AIが実行後、塔の状態を確認',
-    details: [
-      { role: '☐', action: '画面が表示される' },
-      { role: '☐', action: 'ユーザーが操作できる' },
-      { role: '☐', action: '操作に対する反応がある' },
-      { role: '☐', action: '明らかな破綻がない' },
+    detailKeys: [
+      { labelKey: 'item1', isCheckbox: true },
+      { labelKey: 'item2', isCheckbox: true },
+      { labelKey: 'item3', isCheckbox: true },
+      { labelKey: 'item4', isCheckbox: true },
     ],
   },
 ] as const
 
 export default function PhasesSlide({ direction }: SlideProps) {
+  const { t } = useTranslation()
   const [activePhase, setActivePhase] = useState('action')
 
-  const current = useMemo(() => 
-    phases.find(p => p.id === activePhase)!,
+  const current = useMemo(
+    () => phases.find((p) => p.id === activePhase)!,
     [activePhase]
   )
 
@@ -95,7 +85,7 @@ export default function PhasesSlide({ direction }: SlideProps) {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          フェーズ詳細
+          {t('phases.heading')}
         </motion.h2>
 
         <motion.p
@@ -104,7 +94,7 @@ export default function PhasesSlide({ direction }: SlideProps) {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          タブをクリックして各フェーズの詳細を確認
+          {t('phases.subtitle')}
         </motion.p>
 
         <motion.div
@@ -120,7 +110,7 @@ export default function PhasesSlide({ direction }: SlideProps) {
               onClick={() => handlePhaseClick(phase.id)}
             >
               <span className="tab-icon">{phase.icon}</span>
-              <span className="tab-name">{phase.name}</span>
+              <span className="tab-name">{t(`phases.${phase.id}.name`)}</span>
             </button>
           ))}
         </motion.div>
@@ -137,23 +127,31 @@ export default function PhasesSlide({ direction }: SlideProps) {
             <div className="panel-header">
               <span className="panel-icon">{current.icon}</span>
               <div>
-                <h3>{current.name}</h3>
-                <p>{current.desc}</p>
+                <h3>{t(`phases.${current.id}.name`)}</h3>
+                <p>{t(`phases.${current.id}.desc`)}</p>
               </div>
             </div>
 
             <div className="panel-body">
-              {current.details.map((d, i) => (
+              {current.detailKeys.map((d, i) => (
                 <div key={i} className="detail-item">
-                  <span className="detail-label">{d.role}</span>
-                  <span className="detail-action">{d.action}</span>
+                  <span className="detail-label">
+                    {'isCheckbox' in d && d.isCheckbox
+                      ? '☐'
+                      : t(`phases.${current.id}.${d.labelKey}`)}
+                  </span>
+                  <span className="detail-action">
+                    {'actionKey' in d
+                      ? t(`phases.${current.id}.${d.actionKey}`)
+                      : t(`phases.${current.id}.${d.labelKey}`)}
+                  </span>
                 </div>
               ))}
 
-              {'warning' in current && current.warning && (
+              {'hasWarning' in current && current.hasWarning && (
                 <div className="warning-box">
                   <span className="warning-icon">⚠️</span>
-                  {current.warning}
+                  {t(`phases.${current.id}.warning`)}
                 </div>
               )}
             </div>

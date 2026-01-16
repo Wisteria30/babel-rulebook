@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import SlideWrapper from '../components/SlideWrapper'
 import './VictorySlide.css'
 
@@ -9,6 +10,7 @@ interface SlideProps {
 }
 
 export default function VictorySlide({ direction }: SlideProps) {
+  const { t } = useTranslation()
   const [showResult, setShowResult] = useState<'human' | 'god' | null>(null)
 
   return (
@@ -18,7 +20,7 @@ export default function VictorySlide({ direction }: SlideProps) {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
         >
-          勝敗条件
+          {t('victory.heading')}
         </motion.h2>
 
         <motion.p
@@ -27,7 +29,7 @@ export default function VictorySlide({ direction }: SlideProps) {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          4日目終了時に判定
+          {t('victory.subtitle')}
         </motion.p>
 
         <motion.div
@@ -36,24 +38,24 @@ export default function VictorySlide({ direction }: SlideProps) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >
-          <h3>チェックリスト</h3>
-          <p className="checklist-desc">最終ラウンド終了時に以下が全て満たされているか？</p>
+          <h3>{t('victory.checklistTitle')}</h3>
+          <p className="checklist-desc">{t('victory.checklistDesc')}</p>
           <div className="checklist-items">
             <div className="checklist-item">
               <span className="check-icon">☐</span>
-              <span>画面が表示される</span>
+              <span>{t('victory.check1')}</span>
             </div>
             <div className="checklist-item">
               <span className="check-icon">☐</span>
-              <span>ユーザーが操作できる</span>
+              <span>{t('victory.check2')}</span>
             </div>
             <div className="checklist-item">
               <span className="check-icon">☐</span>
-              <span>操作に対する反応がある</span>
+              <span>{t('victory.check3')}</span>
             </div>
             <div className="checklist-item">
               <span className="check-icon">☐</span>
-              <span>明らかな破綻（進行不能）がない</span>
+              <span>{t('victory.check4')}</span>
             </div>
           </div>
         </motion.div>
@@ -66,17 +68,17 @@ export default function VictorySlide({ direction }: SlideProps) {
         >
           <div className="flow-step">
             <span className="step-num">1</span>
-            <span>チェックリスト確認</span>
+            <span>{t('victory.step1')}</span>
           </div>
           <div className="flow-arrow">↓</div>
           <div className="flow-branch">
-            <div className="branch-fail">✘ 1つでも未達成</div>
-            <div className="branch-pass">✔ 全て達成</div>
+            <div className="branch-fail">{t('victory.fail')}</div>
+            <div className="branch-pass">{t('victory.pass')}</div>
           </div>
           <div className="flow-arrow">↓</div>
           <div className="flow-step">
             <span className="step-num">2</span>
-            <span>AI最終判定（完成/未完成）</span>
+            <span>{t('victory.step2')}</span>
           </div>
         </motion.div>
 
@@ -87,13 +89,17 @@ export default function VictorySlide({ direction }: SlideProps) {
           transition={{ delay: 0.7 }}
         >
           <motion.div
-            className={`result-card human-win ${showResult === 'human' ? 'expanded' : ''}`}
-            onClick={() => setShowResult(showResult === 'human' ? null : 'human')}
+            className={`result-card human-win ${
+              showResult === 'human' ? 'expanded' : ''
+            }`}
+            onClick={() =>
+              setShowResult(showResult === 'human' ? null : 'human')
+            }
             whileHover={{ scale: 1.02 }}
           >
             <div className="result-header">
               <span className="result-icon">🏗️</span>
-              <h4>人間陣営の勝利</h4>
+              <h4>{t('victory.humanWin.title')}</h4>
             </div>
             {showResult === 'human' && (
               <motion.div
@@ -101,24 +107,26 @@ export default function VictorySlide({ direction }: SlideProps) {
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: 'auto' }}
               >
-                <p>チェックリストが全て埋まっている</p>
-                <p>かつ</p>
-                <p>AI最終判定で「完成」</p>
+                <p>{t('victory.humanWin.condition1')}</p>
+                <p>{t('victory.humanWin.and')}</p>
+                <p>{t('victory.humanWin.condition2')}</p>
                 <div className="result-message success">
-                  🎉 塔は完成した！
+                  {t('victory.humanWin.message')}
                 </div>
               </motion.div>
             )}
           </motion.div>
 
           <motion.div
-            className={`result-card god-win ${showResult === 'god' ? 'expanded' : ''}`}
+            className={`result-card god-win ${
+              showResult === 'god' ? 'expanded' : ''
+            }`}
             onClick={() => setShowResult(showResult === 'god' ? null : 'god')}
             whileHover={{ scale: 1.02 }}
           >
             <div className="result-header">
               <span className="result-icon">⚡</span>
-              <h4>神陣営の勝利</h4>
+              <h4>{t('victory.godWin.title')}</h4>
             </div>
             {showResult === 'god' && (
               <motion.div
@@ -126,13 +134,13 @@ export default function VictorySlide({ direction }: SlideProps) {
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: 'auto' }}
               >
-                <p>上記を満たさなかった場合全て</p>
+                <p>{t('victory.godWin.condition')}</p>
                 <ul>
-                  <li>チェックリスト未達成</li>
-                  <li>AI最終判定で「未完成」</li>
+                  <li>{t('victory.godWin.reason1')}</li>
+                  <li>{t('victory.godWin.reason2')}</li>
                 </ul>
                 <div className="result-message failure">
-                  💨 塔は崩壊した...
+                  {t('victory.godWin.message')}
                 </div>
               </motion.div>
             )}

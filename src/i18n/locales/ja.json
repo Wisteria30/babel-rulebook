@@ -1,0 +1,184 @@
+{
+  "common": {
+    "keyHint": "← → キーで操作",
+    "reviewHint": "← → キーで最初から確認できます"
+  },
+  "title": {
+    "heading": "BABEL",
+    "subtitle": "神の意志に抗え。塔を完成せよ。",
+    "genre": "👥 協力型 Vibe Coding × 人狼系推理",
+    "tagline": "みんなで協力してAIに指示を出し、アプリを作る。<br />でも、誰かが壊そうとしている——",
+    "players": "4人専用",
+    "duration": "30〜40分",
+    "startButton": "ルールを見る"
+  },
+  "overview": {
+    "heading": "ゲームの概要",
+    "concept": "4人で<1>協力</1>してAIに指示を出し、<br /><1>アプリ（塔）</1>を完成させる。",
+    "godSystem": {
+      "title": "神（システム）の妨害",
+      "desc": "神は塔の完成を許さない。<br />ランダムに「沈黙」や「言葉の反転」で妨害してくる。"
+    },
+    "traitor": {
+      "title": "内通者の存在",
+      "desc": "プレイヤーの中に<1>神の使い</1>が潜んでいる。<br />協力の中に裏切りが混ざる——誰を信じる？"
+    },
+    "goal": "協力 × 推理 × 心理戦。<br />4ラウンド後、塔は完成するか？"
+  },
+  "roles": {
+    "heading": "役職紹介",
+    "subtitle": "カードをクリックして詳細を確認",
+    "humanTeam": "人間陣営",
+    "godTeam": "神陣営",
+    "ability": "能力",
+    "result": "結果",
+    "goal": "やりたいこと",
+    "prophet": {
+      "name": "占い師",
+      "ability": "毎ラウンド、1人を占う",
+      "result": "「神の使い」か「人間」か分かる",
+      "goal": "妨害者を特定して、毎ラウンド追放したい"
+    },
+    "medium": {
+      "name": "霊媒師",
+      "ability": "前ラウンドの全AI指示の要約を確認",
+      "result": "個人特定不可。全体の雰囲気のみ",
+      "goal": "怪しい指示があったかをチームに共有したい"
+    },
+    "citizen": {
+      "name": "市民",
+      "ability": "特殊能力なし",
+      "result": "—",
+      "goal": "推理と会話で妨害者を見破りたい"
+    },
+    "apostle": {
+      "name": "神の使い",
+      "ability": "人間に化けて妨害指示を出す",
+      "result": "—",
+      "goal": "バレずにアプリを壊したい"
+    }
+  },
+  "gameFlow": {
+    "heading": "ゲームの流れ",
+    "subtitle": "4ラウンド（＝4日）で勝敗が決まる",
+    "days": {
+      "setup": { "name": "セットアップ", "desc": "役職配布" },
+      "day1": { "name": "1日目", "desc": "最初の探り合い" },
+      "day2": { "name": "2日目", "desc": "情報が集まる" },
+      "day3": { "name": "3日目", "desc": "確信か疑念か" },
+      "day4": { "name": "4日目", "desc": "最後の決断" }
+    },
+    "roundTitle": "各ラウンドの構成",
+    "phases": {
+      "action": "役職アクション",
+      "divine": "神の審判",
+      "talk": "会話",
+      "exile": "追放",
+      "implement": "実装",
+      "check": "チェック"
+    },
+    "talkTime": "会話フェーズ：約4分",
+    "charLimit": "AI指示：100文字以内"
+  },
+  "phases": {
+    "heading": "フェーズ詳細",
+    "subtitle": "タブをクリックして各フェーズの詳細を確認",
+    "action": {
+      "name": "役職アクション",
+      "desc": "役職固有の行動を行う（非公開・会話禁止）",
+      "prophet": "占い師",
+      "prophetAction": "1人を占う → 「神の使い」か「人間」か判明",
+      "medium": "霊媒師",
+      "mediumAction": "前ラウンドの全AI指示の要約を確認"
+    },
+    "divine": {
+      "name": "神の審判",
+      "desc": "神（システム）が2つの介入を判定",
+      "silence": "沈黙の裁定",
+      "silenceAction": "発動すると会話・追放フェーズをスキップ",
+      "reversal": "言葉の反転",
+      "reversalAction": "発動すると形容詞が逆の意味に（シンプル→複雑）",
+      "warning": "これらはいつ発動するか分からない！"
+    },
+    "talk": {
+      "name": "会話フェーズ",
+      "desc": "約4分、自由に会話（沈黙時はスキップ）",
+      "deduce": "推理",
+      "deduceAction": "誰が神の使いか？",
+      "share": "共有",
+      "shareAction": "占い・霊媒結果（嘘可）",
+      "agree": "合意",
+      "agreeAction": "誰が何を作るか"
+    },
+    "exile": {
+      "name": "追放フェーズ",
+      "desc": "多数決で1人を「実装停止」に（沈黙時はスキップ）",
+      "note": "注意",
+      "noteAction": "追放されても死なない。そのラウンドAI指示が出せないだけ",
+      "strategy": "戦略",
+      "strategyAction": "神の使いを特定できれば、毎ラウンド実質無力化！"
+    },
+    "implement": {
+      "name": "実装依頼フェーズ",
+      "desc": "各自がAIに指示を出す（100文字以内・会話禁止）",
+      "human": "人間",
+      "humanAction": "合意通りの指示を出す",
+      "apostle": "神の使い",
+      "apostleAction": "バレないように妨害指示を混ぜる",
+      "warning": "言葉の反転が発動していると、形容詞が逆になる！"
+    },
+    "check": {
+      "name": "チェックリスト更新",
+      "desc": "AIが実行後、塔の状態を確認",
+      "item1": "画面が表示される",
+      "item2": "ユーザーが操作できる",
+      "item3": "操作に対する反応がある",
+      "item4": "明らかな破綻がない"
+    }
+  },
+  "victory": {
+    "heading": "勝敗条件",
+    "subtitle": "4日目終了時に判定",
+    "checklistTitle": "チェックリスト",
+    "checklistDesc": "最終ラウンド終了時に以下が全て満たされているか？",
+    "check1": "画面が表示される",
+    "check2": "ユーザーが操作できる",
+    "check3": "操作に対する反応がある",
+    "check4": "明らかな破綻（進行不能）がない",
+    "step1": "チェックリスト確認",
+    "step2": "AI最終判定（完成/未完成）",
+    "fail": "✘ 1つでも未達成",
+    "pass": "✔ 全て達成",
+    "humanWin": {
+      "title": "人間陣営の勝利",
+      "condition1": "チェックリストが全て埋まっている",
+      "and": "かつ",
+      "condition2": "AI最終判定で「完成」",
+      "message": "🎉 塔は完成した！"
+    },
+    "godWin": {
+      "title": "神陣営の勝利",
+      "condition": "上記を満たさなかった場合全て",
+      "reason1": "チェックリスト未達成",
+      "reason2": "AI最終判定で「未完成」",
+      "message": "💨 塔は崩壊した..."
+    }
+  },
+  "cta": {
+    "heading": "協力して、塔を築け。",
+    "tagline": "信頼と疑念。協力と裏切り。<br />神の妨害に抗いながら、みんなでアプリを完成させろ。",
+    "summary": {
+      "players": "4人協力",
+      "duration": "30〜40分",
+      "deduction": "人狼系推理",
+      "vibeCoding": "Vibe Coding"
+    },
+    "features": {
+      "coop": "協力ベース",
+      "ai": "リアルタイムAI",
+      "psych": "心理戦"
+    },
+    "button": "🛠️ 開発中...",
+    "comingSoon": "近日公開予定"
+  }
+}
