@@ -176,4 +176,4 @@ src/
 
 ## License
 
-MIT
+All Rights Reserved © BABEL

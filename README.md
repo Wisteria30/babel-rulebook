@@ -86,4 +86,4 @@ Will you complete the tower? Or will betrayal bring it crashing down?
 
 ## License
 
-MIT
+All Rights Reserved © BABEL
