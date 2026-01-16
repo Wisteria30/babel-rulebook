@@ -25,7 +25,7 @@ const slideVariants = {
 }
 
 const transition = {
-  x: { type: 'tween' as const, duration: 0.2, ease: 'easeOut' },
+  x: { type: 'tween' as const, duration: 0.2, ease: 'easeOut' as const },
   opacity: { duration: 0.1 },
 }
 
