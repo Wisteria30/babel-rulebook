@@ -29,7 +29,7 @@ Will you complete the tower? Or will betrayal bring it crashing down?
 
 ## 📚 Documentation
 
-- 📖 [Full Rulebook (Printable)](../rulebook/en.md) — Complete rules in text format
+- 📖 [Full Rulebook (Printable)](../rulebook/rulebook-en.md) — Complete rules in text format
 - 🛠️ [Developer Documentation](../../DEVELOPMENT.md) — Setup, tech stack, contributing
 
 ## 🔗 Links

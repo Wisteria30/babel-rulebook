@@ -2,8 +2,8 @@
 
 Select your language / 言語を選択してください:
 
-- 🇬🇧 [English](docs/readme/en.md)
-- 🇯🇵 [日本語](docs/readme/ja.md)
+- 🇬🇧 [English](docs/readme/readme-en.md)
+- 🇯🇵 [日本語](docs/readme/readme-ja.md)
 
 ---
 

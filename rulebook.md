@@ -2,8 +2,8 @@
 
 Select your language / 言語を選択してください:
 
-- 🇬🇧 [English](docs/rulebook/en.md)
-- 🇯🇵 [日本語](docs/rulebook/ja.md)
+- 🇬🇧 [English](docs/rulebook/rulebook-en.md)
+- 🇯🇵 [日本語](docs/rulebook/rulebook-ja.md)
 
 ---
 
