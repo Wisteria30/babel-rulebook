@@ -70,7 +70,7 @@ export default function GameFlowSlide({ direction }: SlideProps) {
           className="round-phases"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
+          transition={{ delay: 0.3 }}
         >
           <h3>{t('gameFlow.roundTitle')}</h3>
           <div className="phases-grid">
@@ -103,7 +103,7 @@ export default function GameFlowSlide({ direction }: SlideProps) {
           className="time-info"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
+          transition={{ delay: 0.4 }}
         >
           <div className="time-badge">
             <span className="time-icon">⏱️</span>

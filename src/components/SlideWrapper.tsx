@@ -6,12 +6,13 @@ interface SlideWrapperProps {
   children: ReactNode
   direction: number
   className?: string
+  isInitial?: boolean
 }
 
 const slideVariants = {
   enter: (direction: number) => ({
-    x: direction > 0 ? '100%' : '-100%',
-    opacity: 0,
+    x: direction > 0 ? '100%' : direction < 0 ? '-100%' : 0,
+    opacity: direction === 0 ? 1 : 0,
   }),
   center: {
     x: 0,
@@ -24,8 +25,8 @@ const slideVariants = {
 }
 
 const transition = {
-  x: { type: 'spring' as const, stiffness: 300, damping: 30 },
-  opacity: { duration: 0.3 },
+  x: { type: 'spring' as const, stiffness: 400, damping: 35 },
+  opacity: { duration: 0.15 },
 }
 
 export default function SlideWrapper({ children, direction, className = '' }: SlideWrapperProps) {

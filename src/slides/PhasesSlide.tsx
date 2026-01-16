@@ -101,7 +101,7 @@ export default function PhasesSlide({ direction }: SlideProps) {
           className="phase-tabs"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
+          transition={{ delay: 0.15 }}
         >
           {phases.map((phase) => (
             <button
@@ -122,7 +122,7 @@ export default function PhasesSlide({ direction }: SlideProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.2 }}
           >
             <div className="panel-header">
               <span className="panel-icon">{current.icon}</span>

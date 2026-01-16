@@ -72,7 +72,7 @@ export default function RolesSlide({ direction }: SlideProps) {
           className="roles-grid"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
+          transition={{ delay: 0.15 }}
         >
           {roles.map((role, index) => (
             <motion.div
