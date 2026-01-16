@@ -92,7 +92,7 @@
       "mediumAction": "View summary of all AI instructions from last round"
     },
     "divine": {
-      "name": "Divine Judgment",
+      "name": "Judgment",
       "desc": "God (System) determines 2 interventions",
       "silence": "Decree of Silence",
       "silenceAction": "If triggered, skip Discussion and Exile phases",
@@ -119,7 +119,7 @@
       "strategyAction": "If you identify the Apostle, you can neutralize them every round!"
     },
     "implement": {
-      "name": "Implementation Phase",
+      "name": "Implement",
       "desc": "Each player gives AI instructions (100 chars, no talking)",
       "human": "Human",
       "humanAction": "Give instructions as agreed",
@@ -128,7 +128,7 @@
       "warning": "If Word Reversal is active, adjectives are flipped!"
     },
     "check": {
-      "name": "Checklist Update",
+      "name": "Check",
       "desc": "After AI execution, verify tower status",
       "item1": "Screen displays",
       "item2": "User can interact",
