@@ -34,8 +34,8 @@
     "result": "Result",
     "goal": "Objective",
     "prophet": {
-      "name": "High Priest",
-      "ability": "Divine one player each round",
+      "name": "Elder",
+      "ability": "Discern one player each round",
       "result": "Learn if they are 'Apostle' or 'Human'",
       "goal": "Identify the saboteur and exile them each round"
     },
@@ -86,8 +86,8 @@
     "action": {
       "name": "Role Action",
       "desc": "Perform role-specific actions (private, no talking)",
-      "prophet": "High Priest",
-      "prophetAction": "Divine 1 player → Learn if 'Apostle' or 'Human'",
+      "prophet": "Elder",
+      "prophetAction": "Discern 1 player → Learn if 'Apostle' or 'Human'",
       "medium": "Surveyor",
       "mediumAction": "View summary of all AI instructions from last round"
     },
