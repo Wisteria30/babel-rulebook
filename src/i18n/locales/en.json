@@ -34,19 +34,19 @@
     "result": "Result",
     "goal": "Objective",
     "prophet": {
-      "name": "Prophet",
+      "name": "High Priest",
       "ability": "Divine one player each round",
       "result": "Learn if they are 'Apostle' or 'Human'",
       "goal": "Identify the saboteur and exile them each round"
     },
     "medium": {
-      "name": "Medium",
+      "name": "Surveyor",
       "ability": "View summary of all AI instructions from last round",
       "result": "Cannot identify individuals. Only overall impression",
       "goal": "Share if any suspicious instructions were given"
     },
     "citizen": {
-      "name": "Citizen",
+      "name": "Carpenter",
       "ability": "No special ability",
       "result": "—",
       "goal": "Use deduction and discussion to find the saboteur"
@@ -86,9 +86,9 @@
     "action": {
       "name": "Role Action",
       "desc": "Perform role-specific actions (private, no talking)",
-      "prophet": "Prophet",
+      "prophet": "High Priest",
       "prophetAction": "Divine 1 player → Learn if 'Apostle' or 'Human'",
-      "medium": "Medium",
+      "medium": "Surveyor",
       "mediumAction": "View summary of all AI instructions from last round"
     },
     "divine": {
