@@ -13,7 +13,7 @@ const roles = [
   {
     id: 'prophet',
     team: 'human',
-    icon: '🧓',
+    icon: '🦉',
     color: '#6495ed',
   },
   {
