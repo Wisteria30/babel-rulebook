@@ -17,7 +17,7 @@ Will you complete the tower? Or will betrayal bring it crashing down?
 1. **Cooperate** — Discuss and agree on what to build each round
 2. **Instruct AI** — Each player secretly gives instructions to the AI
 3. **Watch Out** — The hidden traitor may sabotage the instructions
-4. **Deduce** — Use special roles like Prophet and Medium to find the saboteur
+4. **Deduce** — Use special roles like Elder and Surveyor to find the saboteur
 5. **Complete** — After 4 rounds, check if the app works!
 
 ## ✨ Features
@@ -25,7 +25,7 @@ Will you complete the tower? Or will betrayal bring it crashing down?
 - 🤖 **Real-time AI integration** — The AI actually builds based on your instructions
 - 🔍 **Social deduction** — Find the traitor through discussion and deduction
 - ⚡ **God's interference** — Random events like "Silence" and "Word Reversal" shake things up
-- 🎭 **4 unique roles** — Prophet, Medium, Citizen, and God's Apostle
+- 🎭 **4 unique roles** — Elder, Surveyor, Carpenter, and God's Apostle
 
 ## 📚 Documentation
 

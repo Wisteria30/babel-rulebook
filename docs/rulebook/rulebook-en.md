@@ -35,21 +35,21 @@ After 4 rounds, will the tower be complete?
 
 ### Human Team
 
-#### Prophet
+#### Elder
 | | |
 |---|---|
-| **Ability** | Divine one player each round |
+| **Ability** | Discern one player each round |
 | **Result** | Learn if they are "Apostle" or "Human" |
 | **Objective** | Identify the saboteur and exile them each round |
 
-#### Medium
+#### Surveyor
 | | |
 |---|---|
 | **Ability** | View summary of all AI instructions from last round |
 | **Result** | Cannot identify individuals. Only overall impression |
 | **Objective** | Share if any suspicious instructions were given |
 
-#### Citizen
+#### Carpenter
 | | |
 |---|---|
 | **Ability** | No special ability |
@@ -94,8 +94,8 @@ Perform role-specific actions (private, no talking).
 
 | Role | Action |
 |------|--------|
-| **Prophet** | Divine 1 player → Learn if "Apostle" or "Human" |
-| **Medium** | View summary of all AI instructions from last round |
+| **Elder** | Discern 1 player → Learn if "Apostle" or "Human" |
+| **Surveyor** | View summary of all AI instructions from last round |
 
 ### 2. Divine Judgment Phase
 
@@ -113,7 +113,7 @@ God (System) determines 2 interventions:
 ~4 minutes of free discussion (skipped if Silence).
 
 - **Deduce**: Who is the Apostle?
-- **Share**: Divination/Medium results (lying allowed)
+- **Share**: Discernment/Surveyor results (lying allowed)
 - **Agree**: Who builds what
 
 ### 4. Exile Phase
